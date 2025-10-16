@@ -1,9 +1,60 @@
-import Image from "next/image";
+"use client"
+
+import Image from "next/image"
+import Wheel from "../components/Wheel"
+import PlayerPicker from "../components/PlayerPicker"
+import teams from "../data/teams.json"
+import players from "../data/players.json"
+import { useState } from "react"
+
+// Define NFLTeam type (can be moved to a types file if preferred)
+type NFLTeam = 
+  | "Arizona Cardinals"
+  | "Atlanta Falcons"
+  | "Baltimore Ravens"
+  | "Buffalo Bills"
+  | "Carolina Panthers"
+  | "Chicago Bears"
+  | "Cincinnati Bengals"
+  | "Cleveland Browns"
+  | "Dallas Cowboys"
+  | "Denver Broncos"
+  | "Detroit Lions"
+  | "Green Bay Packers"
+  | "Houston Texans"
+  | "Indianapolis Colts"
+  | "Jacksonville Jaguars"
+  | "Kansas City Chiefs"
+  | "Las Vegas Raiders"
+  | "Los Angeles Chargers"
+  | "Los Angeles Rams"
+  | "Miami Dolphins"
+  | "Minnesota Vikings"
+  | "New England Patriots"
+  | "New Orleans Saints"
+  | "New York Giants"
+  | "New York Jets"
+  | "Philadelphia Eagles"
+  | "Pittsburgh Steelers"
+  | "San Francisco 49ers"
+  | "Seattle Seahawks"
+  | "Tampa Bay Buccaneers"
+  | "Tennessee Titans"
+  | "Washington Commanders";
 
 export default function Home() {
+  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null);
+  const [pickedPlayers, setPickedPlayers] = useState<string[]>([]);
+
+  const handlePickPlayer = (player: string) => {
+    setPickedPlayers([...pickedPlayers, player]);
+    setSelectedTeam(null); // Reset to show "Choose a Team" button
+  };
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        {/* Original Next.js Starter Content */}
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -20,9 +71,7 @@ export default function Home() {
             </code>
             .
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
+          <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -50,7 +99,32 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        {/* --- Fantasy Draft UI --- */}
+        <div className="w-full flex flex-col items-center gap-8 mt-8">
+          <h1 className="text-3xl font-bold">Fantasy Wheel Draft!</h1>
+
+          <Wheel teams={teams as NFLTeam[]} onSelectTeam={setSelectedTeam} selectedTeam={selectedTeam} />
+          {selectedTeam && (
+            <PlayerPicker
+              team={selectedTeam}
+              players={players}
+              onPickPlayer={handlePickPlayer}
+            />
+          )}
+
+          <div className="mt-6 w-full max-w-md">
+            <h2 className="text-xl font-bold">Picked Players:</h2>
+            <ul className="list-disc list-inside">
+              {pickedPlayers.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </main>
+
+      {/* Footer stays unchanged */}
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -58,13 +132,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
+          <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
           Learn
         </a>
         <a
@@ -73,13 +141,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
+          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
           Examples
         </a>
         <a
@@ -88,16 +150,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
+          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
           Go to nextjs.org →
         </a>
       </footer>
     </div>
   );
 }
+

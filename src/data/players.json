@@ -1,0 +1,259 @@
+{
+  "Arizona Cardinals": [
+    "Kyler Murray",
+    "James Conner",
+    "Trey Benson",
+    "Marvin Harrison Jr.",
+    "Michael Wilson",
+    "Trey McBride"
+  ],
+  "Atlanta Falcons": [
+    "Kirk Cousins",
+    "Bijan Robinson",
+    "Tyler Allgeier",
+    "Drake London",
+    "Malik Washington",
+    "Kyle Pitts"
+  ],
+  "Baltimore Ravens": [
+    "Lamar Jackson",
+    "Derrick Henry",
+    "Justice Hill",
+    "Zay Flowers",
+    "Rashod Bateman",
+    "Mark Andrews"
+  ],
+  "Buffalo Bills": [
+    "Josh Allen",
+    "James Cook",
+    "Ray Davis",
+    "Khalil Shakir",
+    "Amari Cooper",
+    "Dalton Kincaid"
+  ],
+  "Carolina Panthers": [
+    "Bryce Young",
+    "Chuba Hubbard",
+    "Miles Sanders",
+    "Xavier Legette",
+    "Adam Thielen",
+    "Ja'Tavion Sanders"
+  ],
+  "Chicago Bears": [
+    "Caleb Williams",
+    "D'Andre Swift",
+    "Roschon Johnson",
+    "DJ Moore",
+    "Rome Odunze",
+    "Cole Kmet"
+  ],
+  "Cincinnati Bengals": [
+    "Joe Burrow",
+    "Chase Brown",
+    "Zack Moss",
+    "Ja'Marr Chase",
+    "Tee Higgins",
+    "Mike Gesicki"
+  ],
+  "Cleveland Browns": [
+    "Deshaun Watson",
+    "Jerome Ford",
+    "Pierre Strong Jr.",
+    "Amari Cooper",
+    "Jerry Jeudy",
+    "David Njoku"
+  ],
+  "Dallas Cowboys": [
+    "Dak Prescott",
+    "Ezekiel Elliott",
+    "Rico Dowdle",
+    "CeeDee Lamb",
+    "Brandin Cooks",
+    "Jake Ferguson"
+  ],
+  "Denver Broncos": [
+    "Bo Nix",
+    "Javonte Williams",
+    "Jaleel McLaughlin",
+    "Courtland Sutton",
+    "Marvin Mims Jr.",
+    "Greg Dulcich"
+  ],
+  "Detroit Lions": [
+    "Jared Goff",
+    "Jahmyr Gibbs",
+    "David Montgomery",
+    "Amon-Ra St. Brown",
+    "Javon Walker",
+    "Sam LaPorta"
+  ],
+  "Green Bay Packers": [
+    "Jordan Love",
+    "Josh Jacobs",
+    "A.J. Dillon",
+    "Christian Watson",
+    "Jayden Reed",
+    "Luke Musgrave"
+  ],
+  "Houston Texans": [
+    "C.J. Stroud",
+    "Joe Mixon",
+    "Dare Ogunbowale",
+    "Nico Collins",
+    "Stefon Diggs",
+    "Dalton Schultz"
+  ],
+  "Indianapolis Colts": [
+    "Anthony Richardson",
+    "Jonathan Taylor",
+    "Trey Sermon",
+    "Michael Pittman Jr.",
+    "Alec Pierce",
+    "Mo Alie-Cox"
+  ],
+  "Jacksonville Jaguars": [
+    "Trevor Lawrence",
+    "Travis Etienne",
+    "Tank Bigsby",
+    "Brian Thomas Jr.",
+    "Christian Kirk",
+    "Evan Engram"
+  ],
+  "Kansas City Chiefs": [
+    "Patrick Mahomes",
+    "Isiah Pacheco",
+    "Samaje Perine",
+    "Xavier Worthy",
+    "Marquise Brown",
+    "Travis Kelce"
+  ],
+  "Las Vegas Raiders": [
+    "Gardner Minshew",
+    "Zamir White",
+    "Alexander Mattison",
+    "Jakobi Meyers",
+    "Tre Tucker",
+    "Brock Bowers"
+  ],
+  "Los Angeles Chargers": [
+    "Justin Herbert",
+    "J.K. Dobbins",
+    "Gus Edwards",
+    "Quentin Johnston",
+    "Joshua Palmer",
+    "Will Dissly"
+  ],
+  "Los Angeles Rams": [
+    "Matthew Stafford",
+    "Kyren Williams",
+    "Blake Corum",
+    "Puka Nacua",
+    "Cooper Kupp",
+    "Tyler Higbee"
+  ],
+  "Miami Dolphins": [
+    "Tua Tagovailoa",
+    "De'Von Achane",
+    "Raheem Mostert",
+    "Tyreek Hill",
+    "Jaylen Waddle",
+    "Jonnu Smith"
+  ],
+  "Minnesota Vikings": [
+    "Sam Darnold",
+    "Aaron Jones",
+    "Jordan Mason",
+    "Justin Jefferson",
+    "Jordan Addison",
+    "T.J. Hockenson"
+  ],
+  "New England Patriots": [
+    "Drake Maye",
+    "Rhamondre Stevenson",
+    "Antonio Gibson",
+    "DeMario Douglas",
+    "Kendrick Bourne",
+    "Hunter Henry"
+  ],
+  "New Orleans Saints": [
+    "Derek Carr",
+    "Alvin Kamara",
+    "Kendre Miller",
+    "Chris Olave",
+    "Rashid Shaheed",
+    "Juwan Johnson"
+  ],
+  "New York Giants": [
+    "Daniel Jones",
+    "Devin Singletary",
+    "Tyrone Tracy Jr.",
+    "Malik Nabers",
+    "Darius Slayton",
+    "Theo Johnson"
+  ],
+  "New York Jets": [
+    "Aaron Rodgers",
+    "Breece Hall",
+    "Isaiah Davis",
+    "Garrett Wilson",
+    "Mike Williams",
+    "Jeremy Ruckert"
+  ],
+  "Philadelphia Eagles": [
+    "Jalen Hurts",
+    "Saquon Barkley",
+    "Kenneth Gainwell",
+    "A.J. Brown",
+    "DeVonta Smith",
+    "Dallas Goedert"
+  ],
+  "Pittsburgh Steelers": [
+    "Russell Wilson",
+    "Najee Harris",
+    "Jaylen Warren",
+    "George Pickens",
+    "Roman Wilson",
+    "Pat Freiermuth"
+  ],
+  "San Francisco 49ers": [
+    "Brock Purdy",
+    "Christian McCaffrey",
+    "Jordan Mason",
+    "Brandon Aiyuk",
+    "Deebo Samuel",
+    "George Kittle"
+  ],
+  "Seattle Seahawks": [
+    "Geno Smith",
+    "Kenneth Walker III",
+    "Zach Charbonnet",
+    "DK Metcalf",
+    "Jaxon Smith-Njigba",
+    "Noah Fant"
+  ],
+  "Tampa Bay Buccaneers": [
+    "Baker Mayfield",
+    "Rachaad White",
+    "Bucky Irving",
+    "Mike Evans",
+    "Chris Godwin",
+    "Cade Otton"
+  ],
+  "Tennessee Titans": [
+    "Will Levis",
+    "Tony Pollard",
+    "Tyjae Spears",
+    "DeAndre Hopkins",
+    "Calvin Ridley",
+    "Chigoziem Okonkwo"
+  ],
+  "Washington Commanders": [
+    "Jayden Daniels",
+    "Brian Robinson Jr.",
+    "Austin Ekeler",
+    "Terry McLaurin",
+    "Noah Brown",
+    "Zach Ertz"
+  ]
+}
+
