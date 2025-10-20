@@ -1,13 +1,13 @@
 "use client"
 
 import Image from "next/image"
+import { useState } from "react"
 import Wheel from "../components/Wheel"
 import PlayerPicker from "../components/PlayerPicker"
 import teams from "../data/teams.json"
 import players from "../data/players.json"
-import { useState } from "react"
 
-// Define NFLTeam type (can be moved to a types file if preferred)
+// Define NFLTeam type
 type NFLTeam = 
   | "Arizona Cardinals"
   | "Atlanta Falcons"
@@ -40,71 +40,107 @@ type NFLTeam =
   | "Seattle Seahawks"
   | "Tampa Bay Buccaneers"
   | "Tennessee Titans"
-  | "Washington Commanders";
+  | "Washington Commanders"
+
+// Your fantasy lineup structure
+const lineupTemplate = {
+  QB: null,
+  WR1: null,
+  WR2: null,
+  RB1: null,
+  RB2: null,
+  TE: null,
+  FLEX: null,
+  K: null,
+  DEF: null,
+}
 
 export default function Home() {
-  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null);
-  const [pickedPlayers, setPickedPlayers] = useState<string[]>([]);
+  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null)
+  const [lineup, setLineup] = useState<Record<string, string | null>>(lineupTemplate)
+  const [message, setMessage] = useState<string>("")
 
+  // Helper to check if lineup is full
+  const isLineupFull = Object.values(lineup).every((slot) => slot !== null)
+
+  // When a player is picked
   const handlePickPlayer = (player: string) => {
-    setPickedPlayers([...pickedPlayers, player]);
-    setSelectedTeam(null); // Reset to show "Choose a Team" button
-  };
+    // determine position from player name (you can adjust how you store this)
+    const playerPosition = getPlayerPosition(player)
+
+    if (!playerPosition) {
+      setMessage("Could not determine player position.")
+      return
+    }
+
+    // find the correct open slot for that position
+    const openSlotKey = findOpenSlotForPosition(playerPosition, lineup)
+
+    if (!openSlotKey) {
+      setMessage(`You already filled all ${playerPosition} positions! Spin again.`)
+      return
+    }
+
+    // fill the slot
+    setLineup((prev) => ({
+      ...prev,
+      [openSlotKey]: player,
+    }))
+
+    // reset for next spin
+    setSelectedTeam(null)
+    setMessage("")
+  }
+
+  // --- helper functions ---
+  const getPlayerPosition = (player: string): string | null => {
+    // Example assumes player string looks like "Patrick Mahomes - QB"
+    const parts = player.split("-")
+    if (parts.length < 2) return null
+    return parts[1].trim().toUpperCase()
+  }
+
+  const findOpenSlotForPosition = (pos: string, lineup: Record<string, string | null>): string | null => {
+    if (pos === "QB" && !lineup.QB) return "QB"
+    if (pos === "RB") return !lineup.RB1 ? "RB1" : !lineup.RB2 ? "RB2" : lineup.FLEX ? null : "FLEX"
+    if (pos === "WR") return !lineup.WR1 ? "WR1" : !lineup.WR2 ? "WR2" : lineup.FLEX ? null : "FLEX"
+    if (pos === "TE" && !lineup.TE) return "TE"
+    if (pos === "K" && !lineup.K) return "K"
+    if (pos === "DEF" && !lineup.DEF) return "DEF"
+    return null
+  }
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        {/* Original Next.js Starter Content */}
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
-        </ol>
+    <div className="font-sans flex flex-col items-center min-h-screen p-8">
+      <h1 className="text-3xl font-bold mb-8">Fantasy Wheel Draft!</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {isLineupFull ? (
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">🎉 Draft Complete!</h2>
+          <ul className="text-left">
+            {Object.entries(lineup).map(([pos, player]) => (
+              <li key={pos} className="mb-1">
+                <strong>{pos}:</strong> {player}
+              </li>
+            ))}
+          </ul>
+          <button
+            className="mt-6 px-4 py-2 bg-blue-600 text-white rounded"
+            onClick={() => {
+              setLineup(lineupTemplate)
+              setSelectedTeam(null)
+              setMessage("")
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Restart Draft
+          </button>
         </div>
-
-        {/* --- Fantasy Draft UI --- */}
-        <div className="w-full flex flex-col items-center gap-8 mt-8">
-          <h1 className="text-3xl font-bold">Fantasy Wheel Draft!</h1>
-
+      ) : (
+        <>
+          {/* --- Step 1: Spin Wheel --- */}
           <Wheel teams={teams as NFLTeam[]} onSelectTeam={setSelectedTeam} selectedTeam={selectedTeam} />
+
+          {/* --- Step 2: Show Player Picker --- */}
           {selectedTeam && (
             <PlayerPicker
               team={selectedTeam}
@@ -113,48 +149,23 @@ export default function Home() {
             />
           )}
 
-          <div className="mt-6 w-full max-w-md">
-            <h2 className="text-xl font-bold">Picked Players:</h2>
-            <ul className="list-disc list-inside">
-              {pickedPlayers.map((p) => (
-                <li key={p}>{p}</li>
+          {/* --- Step 3: Show lineup and message --- */}
+          <div className="mt-8 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-2 text-center">Your Lineup</h2>
+            <ul className="divide-y divide-gray-300">
+              {Object.entries(lineup).map(([pos, player]) => (
+                <li key={pos} className="py-1 flex justify-between">
+                  <span className="font-semibold">{pos}</span>
+                  <span>{player ?? <span className="text-gray-400">Open</span>}</span>
+                </li>
               ))}
             </ul>
           </div>
-        </div>
-      </main>
 
-      {/* Footer stays unchanged */}
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {message && <p className="text-red-600 mt-4">{message}</p>}
+        </>
+      )}
     </div>
-  );
+  )
 }
 

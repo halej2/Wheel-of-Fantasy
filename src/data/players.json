@@ -1,259 +1,5380 @@
 {
   "Arizona Cardinals": [
-    "Kyler Murray",
-    "James Conner",
-    "Trey Benson",
-    "Marvin Harrison Jr.",
-    "Michael Wilson",
-    "Trey McBride"
+    {
+      "name": "Jacoby Brissett",
+      "position": "QB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zay Jones",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "James Conner",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Pharaoh Brown",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaac Whitney",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyler Murray",
+      "position": "QB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Greg Dortch",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "D'Ernest Johnson",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josiah Deguara",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tavien Feaster",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andre Baccellia",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jermar Jefferson",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Carter",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Simi Fehoko",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bam Knight",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trey McBride",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nick Muse",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elijah Higgins",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Wilson",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chad Ryland",
+      "position": "K",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Emari Demercado",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Travis Vokolek",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Trey Benson",
+      "position": "RB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Marvin Harrison",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kedon Slovis",
+      "position": "QB",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tip Reiman",
+      "position": "TE",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tejhaun Palmer",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Xavier Weaver",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bryson Green",
+      "position": "WR",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Arizona Cardinals",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Atlanta Falcons": [
-    "Kirk Cousins",
-    "Bijan Robinson",
-    "Tyler Allgeier",
-    "Drake London",
-    "Malik Washington",
-    "Kyle Pitts"
+    {
+      "name": "Lee Smith",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kirk Cousins",
+      "position": "QB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jamal Agnew",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Garrett Scantling",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ray-Ray McCloud",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "KhaDarel Hodge",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "David Sills",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Easton Stick",
+      "position": "QB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Charlie Woerner",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Darnell Mooney",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Blair",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Feleipe Franks",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyle Pitts",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Drake London",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Allgeier",
+      "position": "RB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Teagan Quitoriano",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Deven Thompkins",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Parker Romo",
+      "position": "K",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bijan Robinson",
+      "position": "RB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Carlos Washington",
+      "position": "RB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dylan Drummond",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Penix",
+      "position": "QB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Casey Washington",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Emory Jones",
+      "position": "QB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Nick Nash",
+      "position": "WR",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lenny Krieg",
+      "position": "K",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Simon",
+      "position": "TE",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nathan Carter",
+      "position": "RB",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ben Sauls",
+      "position": "K",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Atlanta Falcons",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Baltimore Ravens": [
-    "Lamar Jackson",
-    "Derrick Henry",
-    "Justice Hill",
-    "Zay Flowers",
-    "Rashod Bateman",
-    "Mark Andrews"
+    {
+      "name": "DeAndre Hopkins",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Derrick Henry",
+      "position": "RB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cooper Rush",
+      "position": "QB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Aaron Bailey",
+      "position": "QB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Barrett Burns",
+      "position": "TE",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lamar Jackson",
+      "position": "QB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Zach Terrell",
+      "position": "QB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mark Andrews",
+      "position": "TE",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keith Kirkwood",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justice Hill",
+      "position": "RB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Huntley",
+      "position": "QB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rashod Bateman",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tylan Wallace",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Charlie Kolar",
+      "position": "TE",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaiah Likely",
+      "position": "TE",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zaire Mitchell-Paden",
+      "position": "TE",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keaton Mitchell",
+      "position": "RB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zay Flowers",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rasheen Ali",
+      "position": "RB",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Devontez Walker",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Cornelius Johnson",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dayton Wade",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "LaJohntay Wester",
+      "position": "WR",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Loop",
+      "position": "K",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Baltimore Ravens",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Buffalo Bills": [
-    "Josh Allen",
-    "James Cook",
-    "Ray Davis",
-    "Khalil Shakir",
-    "Amari Cooper",
-    "Dalton Kincaid"
+    {
+      "name": "Matt Prater",
+      "position": "K",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mitchell Trubisky",
+      "position": "QB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Curtis Samuel",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Josh Allen",
+      "position": "QB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dawson Knox",
+      "position": "TE",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ty Johnson",
+      "position": "RB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gabe Davis",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Tyler Bass",
+      "position": "K",
+      "team": "Buffalo Bills",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Reggie Gilliam",
+      "position": "RB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kristian Wilkerson",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elijah Moore",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Palmer",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Shane Buechele",
+      "position": "QB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Khalil Shakir",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "James Cook",
+      "position": "RB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dalton Kincaid",
+      "position": "TE",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Tyrell Shavers",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Frank Gore",
+      "position": "RB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ray Davis",
+      "position": "RB",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keon Coleman",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jackson Hawes",
+      "position": "TE",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Stephen Gosnell",
+      "position": "WR",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keleki Latu",
+      "position": "TE",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Buffalo Bills",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Carolina Panthers": [
-    "Bryce Young",
-    "Chuba Hubbard",
-    "Miles Sanders",
-    "Xavier Legette",
-    "Adam Thielen",
-    "Ja'Tavion Sanders"
+    {
+      "name": "Andy Dalton",
+      "position": "QB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "David Moore",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Wyatt Houston",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hunter Renfrow",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "DeeJay Dallas",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Rico Dowdle",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dan Chisena",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chuba Hubbard",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Micah Simon",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tommy Tremble",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Alex Kessman",
+      "position": "K",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "James Mitchell",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Bryce Young",
+      "position": "QB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Hendon Hooker",
+      "position": "QB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brycen Tremayne",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jonathon Brooks",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Ja'Tavion Sanders",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ainias Smith",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Xavier Legette",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Coker",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mitchell Evans",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jimmy Horn",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tetairoa McMillan",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trevor Etienne",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Anthony Tyus",
+      "position": "RB",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bryce Pierre",
+      "position": "TE",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ryan Fitzgerald",
+      "position": "K",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ja'seem Reed",
+      "position": "WR",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Carolina Panthers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Chicago Bears": [
-    "Caleb Williams",
-    "D'Andre Swift",
-    "Roschon Johnson",
-    "DJ Moore",
-    "Rome Odunze",
-    "Cole Kmet"
+    {
+      "name": "Case Keenum",
+      "position": "QB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Cairo Santos",
+      "position": "K",
+      "team": "Chicago Bears",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Franko House",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "DJ Moore",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Durham Smythe",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Duplicate Player",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Shaq Roland",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Miles Boykin",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Travis Homer",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Olamide Zaccheaus",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Stephen Carlson",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Thomas Ives",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "D'Andre Swift",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cole Kmet",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Devin Duvernay",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nikola Kalinic",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brittain Brown",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Maurice Alexander",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Roschon Johnson",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Moody",
+      "position": "K",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyson Bagent",
+      "position": "QB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Caleb Williams",
+      "position": "QB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rome Odunze",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Colston Loveland",
+      "position": "TE",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luther Burden",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyle Monangai",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "JP Richardson",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jahdae Walker",
+      "position": "WR",
+      "team": "Chicago Bears",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Deion Hankins",
+      "position": "RB",
+      "team": "Chicago Bears",
+      "injuryStatus": "IR"
+    },
+    {
+      "position": "DEF",
+      "team": "Chicago Bears",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Cincinnati Bengals": [
-    "Joe Burrow",
-    "Chase Brown",
-    "Zack Moss",
-    "Ja'Marr Chase",
-    "Tee Higgins",
-    "Mike Gesicki"
+    {
+      "name": "Joe Flacco",
+      "position": "QB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Samaje Perine",
+      "position": "RB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mike Gesicki",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tanner Hudson",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Noah Fant",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Drew Sample",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Browning",
+      "position": "QB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joe Burrow",
+      "position": "QB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tee Higgins",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gary Brightwell",
+      "position": "RB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Evan McPherson",
+      "position": "K",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kendric Pryor",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chase Brown",
+      "position": "RB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andrei Iosivas",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Charlie Jones",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sean Clifford",
+      "position": "QB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mitch Tinsley",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Erick All",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Jermaine Burton",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Kendall Milton",
+      "position": "RB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cam Grandy",
+      "position": "TE",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tahj Brooks",
+      "position": "RB",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan Moore",
+      "position": "WR",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Cincinnati Bengals",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Cleveland Browns": [
-    "Deshaun Watson",
-    "Jerome Ford",
-    "Pierre Strong Jr.",
-    "Amari Cooper",
-    "Jerry Jeudy",
-    "David Njoku"
+    {
+      "name": "DeAndre Carter",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Deshaun Watson",
+      "position": "QB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "David Njoku",
+      "position": "TE",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Jerry Jeudy",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Benny LeMay",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sal Cannella",
+      "position": "TE",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jerome Ford",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bailey Zappe",
+      "position": "QB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kaden Davis",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cedric Tillman",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Blake Whiteheart",
+      "position": "TE",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andre Szmyt",
+      "position": "K",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malachi Corley",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jamari Thrash",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dylan Sampson",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Raheim Sanders",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Dillon Gabriel",
+      "position": "QB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaiah Bond",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Harold Fannin",
+      "position": "TE",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quinshon Judkins",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Shedeur Sanders",
+      "position": "QB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ahmani Marshall",
+      "position": "RB",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gage Larvadain",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke Floriea",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cade McDonald",
+      "position": "WR",
+      "team": "Cleveland Browns",
+      "injuryStatus": "IR"
+    },
+    {
+      "position": "DEF",
+      "team": "Cleveland Browns",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Dallas Cowboys": [
-    "Dak Prescott",
-    "Ezekiel Elliott",
-    "Rico Dowdle",
-    "CeeDee Lamb",
-    "Brandin Cooks",
-    "Jake Ferguson"
+    {
+      "name": "Dak Prescott",
+      "position": "QB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ito Smith",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Parris Campbell",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Grier",
+      "position": "QB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Miles Sanders",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "CeeDee Lamb",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Javonte Williams",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Ferguson",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Tolbert",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "George Pickens",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Davis",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "KaVontae Turpin",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jonathan Mingo",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Luke Schoonmaker",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Brooks",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Jalen Cropper",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Princeton Fant",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "John Stephens",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Brandon Aubrey",
+      "position": "K",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joe Milton",
+      "position": "QB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brevyn Spann-Ford",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ryan Flournoy",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaydon Blue",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Phil Mafah",
+      "position": "RB",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Traeshon Holden",
+      "position": "WR",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rivaldo Fairweather",
+      "position": "TE",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Dallas Cowboys",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Denver Broncos": [
-    "Bo Nix",
-    "Javonte Williams",
-    "Jaleel McLaughlin",
-    "Courtland Sutton",
-    "Marvin Mims Jr.",
-    "Greg Dulcich"
+    {
+      "name": "Nick Williams",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Wil Lutz",
+      "position": "K",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Evan Engram",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Courtland Sutton",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trent Sherfield",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jarrett Stidham",
+      "position": "QB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "J.K. Dobbins",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Adam Trautman",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Adrian Killins",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sam Ehlinger",
+      "position": "QB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Bandy",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Badie",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Samori Toure",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lucas Krull",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Marvin Mims",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Deuce Vaughn",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "A.T. Perry",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Patrick Murtagh",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nate Adkins",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaleel McLaughlin",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Bo Nix",
+      "position": "QB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Troy Franklin",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "RJ Harvey",
+      "position": "RB",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Pat Bryant",
+      "position": "WR",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Caleb Lohner",
+      "position": "TE",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Denver Broncos",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Detroit Lions": [
-    "Jared Goff",
-    "Jahmyr Gibbs",
-    "David Montgomery",
-    "Amon-Ra St. Brown",
-    "Javon Walker",
-    "Sam LaPorta"
+    {
+      "name": "Jared Goff",
+      "position": "QB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kalif Raymond",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "C.J. Beathard",
+      "position": "QB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyle Allen",
+      "position": "QB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ross Dwelley",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "David Montgomery",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tom Kennedy",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Craig Reynolds",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Warren",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kenny Yeboah",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Brock Wright",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Shane Zylstra",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jameson Williams",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sam LaPorta",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Cunningham",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jacob Saylors",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Bates",
+      "position": "K",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sione Vaki",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Isaac TeSlaa",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dominic Lovett",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jackson Meeks",
+      "position": "WR",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kye Robichaux",
+      "position": "RB",
+      "team": "Detroit Lions",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Zach Horton",
+      "position": "TE",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Detroit Lions",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Green Bay Packers": [
-    "Jordan Love",
-    "Josh Jacobs",
-    "A.J. Dillon",
-    "Christian Watson",
-    "Jayden Reed",
-    "Luke Musgrave"
+    {
+      "name": "Brandon McManus",
+      "position": "K",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Bronson Kaufusi",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josh Jacobs",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaac Nauta",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Kerrith Whyte",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "DeAndre Thompkins",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Jordan Love",
+      "position": "QB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Pierre Strong",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Romeo Doubs",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Willis",
+      "position": "QB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Christian Watson",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Bo Melton",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "John FitzPatrick",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lucas Havrisik",
+      "position": "K",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke Musgrave",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tucker Kraft",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dontayvion Wicks",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Josh Whyle",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Clayton Tune",
+      "position": "QB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jayden Reed",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Ben Sims",
+      "position": "TE",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Malik Heath",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Brooks",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Emanuel Wilson",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "MarShawn Lloyd",
+      "position": "RB",
+      "team": "Green Bay Packers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Savion Williams",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Matthew Golden",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Sheppard",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jakobie Keeney-James",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaiah Neyor",
+      "position": "WR",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Green Bay Packers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Houston Texans": [
-    "C.J. Stroud",
-    "Joe Mixon",
-    "Dare Ogunbowale",
-    "Nico Collins",
-    "Stefon Diggs",
-    "Dalton Schultz"
+    {
+      "name": "Ka'imi Fairbairn",
+      "position": "K",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joe Mixon",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Dare Ogunbowale",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Christian Kirk",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Nick Chubb",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dalton Schultz",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Braxton Berrios",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justin Watson",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Harrison Bryant",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quintez Cephus",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brevin Jordan",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Nico Collins",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Davis Mills",
+      "position": "QB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dameon Pierce",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tank Dell",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "C.J. Stroud",
+      "position": "QB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Xavier Hutchinson",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jared Wayne",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jawhar Jordan",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cade Stover",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "British Brooks",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brenden Bates",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Woody Marks",
+      "position": "RB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jayden Higgins",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaylin Noel",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Graham Mertz",
+      "position": "QB",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke Lachey",
+      "position": "TE",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josh Kelly",
+      "position": "WR",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Houston Texans",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Indianapolis Colts": [
-    "Anthony Richardson",
-    "Jonathan Taylor",
-    "Trey Sermon",
-    "Michael Pittman Jr.",
-    "Alec Pierce",
-    "Mo Alie-Cox"
+    {
+      "name": "Jack Doyle",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ameer Abdullah",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Laquon Treadwell",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mo Alie-Cox",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Al Riles",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Badgley",
+      "position": "K",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Daniel Jones",
+      "position": "QB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brett Rypien",
+      "position": "QB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ashton Dulin",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "D.J. Montgomery",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jonathan Taylor",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Pittman",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Salvon Ahmed",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Sean McKeon",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Morton",
+      "position": "QB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Alec Pierce",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Goodson",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Drew Ogletree",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Anthony Richardson",
+      "position": "QB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Josh Downs",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Will Mallory",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Adonai Mitchell",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Anthony Gould",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Spencer Shrader",
+      "position": "K",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Riley Leonard",
+      "position": "QB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "DJ Giddens",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Warren",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ulysses Bentley",
+      "position": "RB",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Coleman Owen",
+      "position": "WR",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Max Mang",
+      "position": "TE",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Indianapolis Colts",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Jacksonville Jaguars": [
-    "Trevor Lawrence",
-    "Travis Etienne",
-    "Tank Bigsby",
-    "Brian Thomas Jr.",
-    "Christian Kirk",
-    "Evan Engram"
+    {
+      "name": "Johnny Mundt",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tim Patrick",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Nick Mullens",
+      "position": "QB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan Akins",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trevor Lawrence",
+      "position": "QB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hunter Long",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quintin Morris",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Travis Etienne",
+      "position": "RB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dyami Brown",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Austin Trammell",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tim Jones",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brenton Strange",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Parker Washington",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brian Thomas",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Cody Schrader",
+      "position": "RB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Cam Little",
+      "position": "K",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Carter Bradley",
+      "position": "QB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Cephus",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Ja'Quinden Jackson",
+      "position": "RB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bhayshul Tuten",
+      "position": "RB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Travis Hunter",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "LeQuint Allen",
+      "position": "RB",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Patrick Herbert",
+      "position": "TE",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chandler Brayboy",
+      "position": "WR",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Jacksonville Jaguars",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Kansas City Chiefs": [
-    "Patrick Mahomes",
-    "Isiah Pacheco",
-    "Samaje Perine",
-    "Xavier Worthy",
-    "Marquise Brown",
-    "Travis Kelce"
+    {
+      "name": "Travis Kelce",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "JuJu Smith-Schuster",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Patrick Mahomes",
+      "position": "QB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kareem Hunt",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Harrison Butker",
+      "position": "K",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elijah McGuire",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Robert Tonyan",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hollywood Brown",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gardner Minshew",
+      "position": "QB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joe Forson",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "NA"
+    },
+    {
+      "name": "Clyde Edwards-Helaire",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elijah Mitchell",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Noah Gray",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyquan Thornton",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isiah Pacheco",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keaontay Ingram",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Chris Oladokun",
+      "position": "QB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rashee Rice",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jason Brownlee",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nikko Remigio",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Carson Steele",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jared Wiley",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Xavier Worthy",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brashard Smith",
+      "position": "RB",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Royals",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Briningstool",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tre Watson",
+      "position": "TE",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jimmy Holiday",
+      "position": "WR",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Kansas City Chiefs",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Las Vegas Raiders": [
-    "Gardner Minshew",
-    "Zamir White",
-    "Alexander Mattison",
-    "Jakobi Meyers",
-    "Tre Tucker",
-    "Brock Bowers"
+    {
+      "name": "Geno Smith",
+      "position": "QB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Phillip Dorsett",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Raheem Mostert",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Richard",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ian Thomas",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Daniel Carlson",
+      "position": "K",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jakobi Meyers",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Alex Bachman",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Albert Okwuegbunam",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zamir White",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Kenny Pickett",
+      "position": "QB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Leroy Watson",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Mayer",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justin Shorter",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tre Tucker",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Aidan O'Connell",
+      "position": "QB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Shedrick Jackson",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dylan Laube",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brock Bowers",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Chris Collier",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jack Bech",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ashton Jeanty",
+      "position": "RB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dont'e Thornton",
+      "position": "WR",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cam Miller",
+      "position": "QB",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Carter Runyon",
+      "position": "TE",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Las Vegas Raiders",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Los Angeles Chargers": [
-    "Justin Herbert",
-    "J.K. Dobbins",
-    "Gus Edwards",
-    "Quentin Johnston",
-    "Joshua Palmer",
-    "Will Dissly"
+    {
+      "name": "Keenan Allen",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Dissly",
+      "position": "TE",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Conklin",
+      "position": "TE",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nyheim Hines",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justin Herbert",
+      "position": "QB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "KJ Hill",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Najee Harris",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jaret Patterson",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trey Lance",
+      "position": "QB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hassan Haskins",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cameron Dicker",
+      "position": "K",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tucker Fisk",
+      "position": "TE",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quentin Johnston",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Derius Davis",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ladd McConkey",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kimani Vidal",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "JaQuae Jackson",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Thomas Yassmin",
+      "position": "TE",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Oronde Gadsden",
+      "position": "TE",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Omarion Hampton",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tre' Harris",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "KeAndre Lambert-Smith",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "DJ Uiagalelei",
+      "position": "QB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke Grimm",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Amar Johnson",
+      "position": "RB",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dalevon Campbell",
+      "position": "WR",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Los Angeles Chargers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Los Angeles Rams": [
-    "Matthew Stafford",
-    "Kyren Williams",
-    "Blake Corum",
-    "Puka Nacua",
-    "Cooper Kupp",
-    "Tyler Higbee"
+    {
+      "name": "Matthew Stafford",
+      "position": "QB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jimmy Garoppolo",
+      "position": "QB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Davante Adams",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Higbee",
+      "position": "TE",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Colby Parkinson",
+      "position": "TE",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tutu Atwell",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyren Williams",
+      "position": "RB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ronnie Rivers",
+      "position": "RB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Puka Nacua",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Davis Allen",
+      "position": "TE",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Stetson Bennett",
+      "position": "QB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Xavier Smith",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jarquez Hunter",
+      "position": "RB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Blake Corum",
+      "position": "RB",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan Whittington",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Karty",
+      "position": "K",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Terrance Ferguson",
+      "position": "TE",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Konata Mumpfield",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tru Edwards",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brennan Presley",
+      "position": "WR",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mark Redman",
+      "position": "TE",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Los Angeles Rams",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Miami Dolphins": [
-    "Tua Tagovailoa",
-    "De'Von Achane",
-    "Raheem Mostert",
-    "Tyreek Hill",
-    "Jaylen Waddle",
-    "Jonnu Smith"
+    {
+      "name": "Allen Hurns",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Darren Waller",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Tyreek Hill",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Cedrick Wilson",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Jason Sanders",
+      "position": "K",
+      "team": "Miami Dolphins",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jeff Wilson",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Alexander Mattison",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jordan Scarlett",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "JaMycal Hasty",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nick Westbrook-Ikhine",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaylen Waddle",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zach Wilson",
+      "position": "QB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Dee Eskridge",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Riley Patterson",
+      "position": "K",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kalif Jackson",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Greg Dulcich",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tanner Conner",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "De'Von Achane",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Julian Hill",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Washington",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaylen Wright",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tahj Washington",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Hayden Rucci",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ollie Gordon",
+      "position": "RB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quinn Ewers",
+      "position": "QB",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Theo Wease",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "AJ Henning",
+      "position": "WR",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalin Conyers",
+      "position": "TE",
+      "team": "Miami Dolphins",
+      "injuryStatus": "IR"
+    },
+    {
+      "position": "DEF",
+      "team": "Miami Dolphins",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Minnesota Vikings": [
-    "Sam Darnold",
-    "Aaron Jones",
-    "Jordan Mason",
-    "Justin Jefferson",
-    "Jordan Addison",
-    "T.J. Hockenson"
+    {
+      "name": "Adam Thielen",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Carson Wentz",
+      "position": "QB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nick Vannett",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Aaron Jones",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "T.J. Hockenson",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josh Oliver",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justin Jefferson",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cam Akers",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rondale Moore",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jalen Nailor",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ty Chandler",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jordan Mason",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan Addison",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zavier Scott",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "J.J. McCarthy",
+      "position": "QB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Will Reichard",
+      "position": "K",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jeshaun Jones",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Corey Kiner",
+      "position": "RB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tai Felton",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gavin Bartholomew",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Max Brosmer",
+      "position": "QB",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bryson Nesbit",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dontae Fleming",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Myles Price",
+      "position": "WR",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ben Yurosek",
+      "position": "TE",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Minnesota Vikings",
+      "injuryStatus": "Healthy"
+    }
   ],
   "New England Patriots": [
-    "Drake Maye",
-    "Rhamondre Stevenson",
-    "Antonio Gibson",
-    "DeMario Douglas",
-    "Kendrick Bourne",
-    "Hunter Henry"
+    {
+      "name": "Stefon Diggs",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Matt LaCosse",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Austin Hooper",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hunter Henry",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mack Hollins",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Dobbs",
+      "position": "QB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Antonio Gibson",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Rhamondre Stevenson",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jashaun Corbin",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Thomas Odukoya",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "DeMario Douglas",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kayshon Boutte",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Deneric Prince",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Tommy DeVito",
+      "position": "QB",
+      "team": "New England Patriots",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Drake Maye",
+      "position": "QB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jack Westover",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "John Jiles",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Terrell Jennings",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "TreVeyon Henderson",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Efton Chism",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kyle Williams",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andy Borregales",
+      "position": "K",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lan Larison",
+      "position": "RB",
+      "team": "New England Patriots",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "CJ Dippre",
+      "position": "TE",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jeremiah Webb",
+      "position": "WR",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "New England Patriots",
+      "injuryStatus": "Healthy"
+    }
   ],
   "New Orleans Saints": [
-    "Derek Carr",
-    "Alvin Kamara",
-    "Kendre Miller",
-    "Chris Olave",
-    "Rashid Shaheed",
-    "Juwan Johnson"
+    {
+      "name": "Blake Bortles",
+      "position": "QB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brandin Cooks",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Alvin Kamara",
+      "position": "RB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Taysom Hill",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dante Pettis",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Eldridge Massington",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Foster Moreau",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Juwan Johnson",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jack Stoll",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Olave",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kevin Austin",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Velus Jones",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rashid Shaheed",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trey Palmer",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Kendre Miller",
+      "position": "RB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Jake Haener",
+      "position": "QB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ronnie Bell",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Blake Grupe",
+      "position": "K",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Spencer Rattler",
+      "position": "QB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ja'Lynn Polk",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Charlie Smyth",
+      "position": "K",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bub Means",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Devaughn Vele",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mason Tipton",
+      "position": "WR",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mason Pline",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Treyton Welch",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Devin Neal",
+      "position": "RB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Moliki Matavao",
+      "position": "TE",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Shough",
+      "position": "QB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Hunter Dekkers",
+      "position": "QB",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Out"
+    },
+    {
+      "position": "DEF",
+      "team": "New Orleans Saints",
+      "injuryStatus": "Healthy"
+    }
   ],
   "New York Giants": [
-    "Daniel Jones",
-    "Devin Singletary",
-    "Tyrone Tracy Jr.",
-    "Malik Nabers",
-    "Darius Slayton",
-    "Theo Johnson"
+    {
+      "name": "Graham Gano",
+      "position": "K",
+      "team": "New York Giants",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Russell Wilson",
+      "position": "QB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Levine Toilolo",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Jameis Winston",
+      "position": "QB",
+      "team": "New York Giants",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Chris Manhertz",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andy Jones",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Taquan Mizzell",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Younghoe Koo",
+      "position": "K",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lil'Jordan Humphrey",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Devin Singletary",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Clayton Thorson",
+      "position": "QB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Darius Slayton",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Gunner Olszewski",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tommy Stevens",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ihmir Smith-Marsette",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Wan'Dale Robinson",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Daniel Bellinger",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalin Hyatt",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bryce Ford-Wheaton",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Eric Gray",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Theo Johnson",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Nabers",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Dante Miller",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyrone Tracy",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jude McAtamney",
+      "position": "K",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Antwane Wells",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cam Skattebo",
+      "position": "RB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaxson Dart",
+      "position": "QB",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Thomas Fidone",
+      "position": "TE",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dalen Cambre",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Beaux Collins",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Da'Quan Felton",
+      "position": "WR",
+      "team": "New York Giants",
+      "injuryStatus": "IR"
+    },
+    {
+      "position": "DEF",
+      "team": "New York Giants",
+      "injuryStatus": "Healthy"
+    }
   ],
   "New York Jets": [
-    "Aaron Rodgers",
-    "Breece Hall",
-    "Isaiah Davis",
-    "Garrett Wilson",
-    "Mike Williams",
-    "Jeremy Ruckert"
+    {
+      "name": "Nick Folk",
+      "position": "K",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyrod Taylor",
+      "position": "QB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Myles White",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joshua Perkins",
+      "position": "TE",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josh Reynolds",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Allen Lazard",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Andrew Beck",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trenton Irwin",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Johnson",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Justin Fields",
+      "position": "QB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Khalil Herbert",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kene Nwangwu",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Brandon Smith",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jeremy Ruckert",
+      "position": "TE",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Garrett Wilson",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Breece Hall",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jelani Woods",
+      "position": "TE",
+      "team": "New York Jets",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Stone Smartt",
+      "position": "TE",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Irvin Charles",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Isaiah Davis",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Braelon Allen",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Isaiah Williams",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Keilan Robinson",
+      "position": "RB",
+      "team": "New York Jets",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Mason Taylor",
+      "position": "TE",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brady Cook",
+      "position": "QB",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Arian Smith",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quentin Skinner",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jamaal Pritchett",
+      "position": "WR",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "New York Jets",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Philadelphia Eagles": [
-    "Jalen Hurts",
-    "Saquon Barkley",
-    "Kenneth Gainwell",
-    "A.J. Brown",
-    "DeVonta Smith",
-    "Dallas Goedert"
+    {
+      "name": "Jake Elliott",
+      "position": "K",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Saquon Barkley",
+      "position": "RB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dallas Goedert",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "A.J. Brown",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "A.J. Dillon",
+      "position": "RB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Jalen Hurts",
+      "position": "QB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Quez Watkins",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "DeVonta Smith",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Terrace Marshall",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kylen Granson",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jahan Dotson",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "John Metchie",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sam Howell",
+      "position": "QB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Grant Calcaterra",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Britain Covey",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tank Bigsby",
+      "position": "RB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tanner McKee",
+      "position": "QB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cameron Latu",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "E.J. Jenkins",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Xavier Gipson",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Shipley",
+      "position": "RB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaheim Bell",
+      "position": "TE",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Johnny Wilson",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Kyle McCord",
+      "position": "QB",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Darius Cooper",
+      "position": "WR",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "IR"
+    },
+    {
+      "position": "DEF",
+      "team": "Philadelphia Eagles",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Pittsburgh Steelers": [
-    "Russell Wilson",
-    "Najee Harris",
-    "Jaylen Warren",
-    "George Pickens",
-    "Roman Wilson",
-    "Pat Freiermuth"
+    {
+      "name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ben Roethlisberger",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Boswell",
+      "position": "K",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Eric Ebron",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jonnu Smith",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Nick Schuessler",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mason Rudolph",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Logan Woodside",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dwayne Haskins",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "DK Metcalf",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dax Raymond",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Donald Parham",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Matt Sokol",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Scotty Miller",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Isaiah Hodgins",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kenneth Gainwell",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trey Sermon",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Pat Freiermuth",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ben Skowronek",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Calvin Austin",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Connor Heyward",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Skylar Thompson",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jaylen Warren",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Raheem Blackshear",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Darnell Washington",
+      "position": "TE",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lew Nichols",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Roman Wilson",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kaleb Johnson",
+      "position": "RB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Howard",
+      "position": "QB",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Ke'Shawn Williams",
+      "position": "WR",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Pittsburgh Steelers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "San Francisco 49ers": [
-    "Brock Purdy",
-    "Christian McCaffrey",
-    "Jordan Mason",
-    "Brandon Aiyuk",
-    "Deebo Samuel",
-    "George Kittle"
+    {
+      "name": "Demarcus Robinson",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "George Kittle",
+      "position": "TE",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trent Taylor",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Kendrick Bourne",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Glen Coffee",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Russell Gage",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Eddy Pineiro",
+      "position": "K",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Malik Turner",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brandon Aiyuk",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Patrick Taylor",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jauan Jennings",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mac Jones",
+      "position": "QB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke Farrell",
+      "position": "TE",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brian Robinson",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Skyy Moore",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brock Purdy",
+      "position": "QB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Sincere McCormick",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jake Tonges",
+      "position": "TE",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Adrian Martinez",
+      "position": "QB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jacob Cowing",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Ricky Pearsall",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Isaac Guerendo",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Messiah Swinson",
+      "position": "TE",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan James",
+      "position": "RB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Kurtis Rourke",
+      "position": "QB",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "PUP"
+    },
+    {
+      "name": "Jordan Watkins",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Junior Bergen",
+      "position": "WR",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "San Francisco 49ers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Seattle Seahawks": [
-    "Geno Smith",
-    "Kenneth Walker III",
-    "Zach Charbonnet",
-    "DK Metcalf",
-    "Jaxon Smith-Njigba",
-    "Noah Fant"
+    {
+      "name": "Jason Myers",
+      "position": "K",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cooper Kupp",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Eric Saubert",
+      "position": "TE",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Skyler Howard",
+      "position": "QB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sam Darnold",
+      "position": "QB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Drew Lock",
+      "position": "QB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Myles Gaskin",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cody White",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kenneth Walker",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Dareke Young",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyler Scott",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Zach Charbonnet",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kenny McIntosh",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Jake Bobo",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brady Russell",
+      "position": "TE",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "AJ Barner",
+      "position": "TE",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "George Holani",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ricky White",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tory Horton",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jalen Milroe",
+      "position": "QB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elijah Arroyo",
+      "position": "TE",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Robbie Ouzts",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Courtney Jackson",
+      "position": "WR",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jacardia Wright",
+      "position": "RB",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Nick Kallerup",
+      "position": "TE",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Seattle Seahawks",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Tampa Bay Buccaneers": [
-    "Baker Mayfield",
-    "Rachaad White",
-    "Bucky Irving",
-    "Mike Evans",
-    "Chris Godwin",
-    "Cade Otton"
+    {
+      "name": "Le'Veon Bell",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Darren Fells",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Teddy Bridgewater",
+      "position": "QB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Mike Evans",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Sterling Shepard",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Godwin",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Baker Mayfield",
+      "position": "QB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chase McLaughlin",
+      "position": "K",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cade Otton",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Rachaad White",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ko Kieft",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Dennis Houston",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sean Tucker",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Payne Durham",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Owen Wright",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tanner Taula",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ryan Miller",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Bucky Irving",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Jalen McMillan",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Devin Culp",
+      "position": "TE",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Michael Wiley",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kameron Johnson",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tez Johnson",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Emeka Egbuka",
+      "position": "WR",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Connor Bazelak",
+      "position": "QB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Josh Williams",
+      "position": "RB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Garrett Greene",
+      "position": "QB",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Tampa Bay Buccaneers",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Tennessee Titans": [
-    "Will Levis",
-    "Tony Pollard",
-    "Tyjae Spears",
-    "DeAndre Hopkins",
-    "Calvin Ridley",
-    "Chigoziem Okonkwo"
+    {
+      "name": "Tyler Lockett",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Trevor Siemian",
+      "position": "QB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Brandon Allen",
+      "position": "QB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Calvin Ridley",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Caleb Scott",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Donnie Ernsberger",
+      "position": "TE",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Questionable"
+    },
+    {
+      "name": "Tony Pollard",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Joey Slye",
+      "position": "K",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Van Jefferson",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "James Proche",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Mason Kinsey",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chig Okonkwo",
+      "position": "TE",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Julius Chestnut",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Tyjae Spears",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Will Levis",
+      "position": "QB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Joel Wilson",
+      "position": "TE",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jordan Mims",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Blake Watson",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Bryce Oliver",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "David Martin-Robinson",
+      "position": "TE",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Elic Ayomanor",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Gunnar Helm",
+      "position": "TE",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Kalel Mullings",
+      "position": "RB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Xavier Restrepo",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Cam Ward",
+      "position": "QB",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chimere Dike",
+      "position": "WR",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Tennessee Titans",
+      "injuryStatus": "Healthy"
+    }
   ],
   "Washington Commanders": [
-    "Jayden Daniels",
-    "Brian Robinson Jr.",
-    "Austin Ekeler",
-    "Terry McLaurin",
-    "Noah Brown",
-    "Zach Ertz"
+    {
+      "name": "Josh Johnson",
+      "position": "QB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Zach Ertz",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Marcus Mariota",
+      "position": "QB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Moore",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Wendell Smallwood",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Temarrick Hemingway",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Robbie Chosen",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jeremy McNichols",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Noah Brown",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Austin Ekeler",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Chase Edmonds",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Deebo Samuel",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Terry McLaurin",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Tyree Jackson",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "IR"
+    },
+    {
+      "name": "Matt Gay",
+      "position": "K",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Lawrence Cager",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "John Bates",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Treylon Burks",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Chris Rodriguez",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Sam Hartman",
+      "position": "QB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jayden Daniels",
+      "position": "QB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Out"
+    },
+    {
+      "name": "Ben Sinnott",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Luke McCaffrey",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Colson Yankoff",
+      "position": "TE",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Donovan Edwards",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Ja'Corey Brooks",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jacory Croskey-Merritt",
+      "position": "RB",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jaylin Lane",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "name": "Jacoby Jones",
+      "position": "WR",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    },
+    {
+      "position": "DEF",
+      "team": "Washington Commanders",
+      "injuryStatus": "Healthy"
+    }
   ]
 }
-
