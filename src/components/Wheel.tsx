@@ -1,110 +1,57 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-type NFLTeam = 
-  | "Arizona Cardinals"
-  | "Atlanta Falcons"
-  | "Baltimore Ravens"
-  | "Buffalo Bills"
-  | "Carolina Panthers"
-  | "Chicago Bears"
-  | "Cincinnati Bengals"
-  | "Cleveland Browns"
-  | "Dallas Cowboys"
-  | "Denver Broncos"
-  | "Detroit Lions"
-  | "Green Bay Packers"
-  | "Houston Texans"
-  | "Indianapolis Colts"
-  | "Jacksonville Jaguars"
-  | "Kansas City Chiefs"
-  | "Las Vegas Raiders"
-  | "Los Angeles Chargers"
-  | "Los Angeles Rams"
-  | "Miami Dolphins"
-  | "Minnesota Vikings"
-  | "New England Patriots"
-  | "New Orleans Saints"
-  | "New York Giants"
-  | "New York Jets"
-  | "Philadelphia Eagles"
-  | "Pittsburgh Steelers"
-  | "San Francisco 49ers"
-  | "Seattle Seahawks"
-  | "Tampa Bay Buccaneers"
-  | "Tennessee Titans"
-  | "Washington Commanders";
+type NFLTeam =
+  | "Arizona Cardinals" | "Atlanta Falcons" | "Baltimore Ravens" | "Buffalo Bills"
+  | "Carolina Panthers" | "Chicago Bears" | "Cincinnati Bengals" | "Cleveland Browns"
+  | "Dallas Cowboys" | "Denver Broncos" | "Detroit Lions" | "Green Bay Packers"
+  | "Houston Texans" | "Indianapolis Colts" | "Jacksonville Jaguars" | "Kansas City Chiefs"
+  | "Las Vegas Raiders" | "Los Angeles Chargers" | "Los Angeles Rams" | "Miami Dolphins"
+  | "Minnesota Vikings" | "New England Patriots" | "New Orleans Saints" | "New York Giants"
+  | "New York Jets" | "Philadelphia Eagles" | "Pittsburgh Steelers" | "San Francisco 49ers"
+  | "Seattle Seahawks" | "Tampa Bay Buccaneers" | "Tennessee Titans" | "Washington Commanders";
 
 const teamColors: Record<NFLTeam, string> = {
-  "Arizona Cardinals": "#97233F",
-  "Atlanta Falcons": "#A6192E",
-  "Baltimore Ravens": "#241773",
-  "Buffalo Bills": "#00338D",
-  "Carolina Panthers": "#0076B6",
-  "Chicago Bears": "#0B162A",
-  "Cincinnati Bengals": "#000000",
-  "Cleveland Browns": "#311D00",
-  "Dallas Cowboys": "#003594",
-  "Denver Broncos": "#002244",
-  "Detroit Lions": "#0076B6",
-  "Green Bay Packers": "#203731",
-  "Houston Texans": "#03202F",
-  "Indianapolis Colts": "#002C5F",
-  "Jacksonville Jaguars": "#101820",
-  "Kansas City Chiefs": "#E31837",
-  "Las Vegas Raiders": "#A5ACAF",
-  "Los Angeles Chargers": "#003087",
-  "Los Angeles Rams": "#002244",
-  "Miami Dolphins": "#008E97",
-  "Minnesota Vikings": "#4F2A1D",
-  "New England Patriots": "#0C2340",
-  "New Orleans Saints": "#9F8958",
-  "New York Giants": "#0B2265",
-  "New York Jets": "#125C77",
-  "Philadelphia Eagles": "#004C54",
-  "Pittsburgh Steelers": "#FFB612",
-  "San Francisco 49ers": "#AA0000",
-  "Seattle Seahawks": "#002244",
-  "Tampa Bay Buccaneers": "#D11A2A",
-  "Tennessee Titans": "#0C2340",
-  "Washington Commanders": "#773141"
+  "Arizona Cardinals": "#97233F", "Atlanta Falcons": "#A6192E", "Baltimore Ravens": "#241773",
+  "Buffalo Bills": "#00338D", "Carolina Panthers": "#0076B6", "Chicago Bears": "#0B162A",
+  "Cincinnati Bengals": "#000000", "Cleveland Browns": "#311D00", "Dallas Cowboys": "#003594",
+  "Denver Broncos": "#002244", "Detroit Lions": "#0076B6", "Green Bay Packers": "#203731",
+  "Houston Texans": "#03202F", "Indianapolis Colts": "#002C5F", "Jacksonville Jaguars": "#101820",
+  "Kansas City Chiefs": "#E31837", "Las Vegas Raiders": "#A5ACAF", "Los Angeles Chargers": "#003087",
+  "Los Angeles Rams": "#002244", "Miami Dolphins": "#008E97", "Minnesota Vikings": "#4F2A1D",
+  "New England Patriots": "#0C2340", "New Orleans Saints": "#9F8958", "New York Giants": "#0B2265",
+  "New York Jets": "#125C77", "Philadelphia Eagles": "#004C54", "Pittsburgh Steelers": "#FFB612",
+  "San Francisco 49ers": "#AA0000", "Seattle Seahawks": "#002244", "Tampa Bay Buccaneers": "#D11A2A",
+  "Tennessee Titans": "#0C2340", "Washington Commanders": "#773141"
 };
 
 interface WheelProps {
   teams: NFLTeam[];
   onSelectTeam: (team: NFLTeam) => void;
   selectedTeam: NFLTeam | null;
-  // ✅ Add this prop so parent can reset skipUsed when new roster starts
-  resetKey?: string | number;
 }
 
-export default function Wheel({ teams, onSelectTeam, selectedTeam, resetKey }: WheelProps) {
+export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps) {
   const [spinning, setSpinning] = useState(false);
   const [skipUsed, setSkipUsed] = useState(false);
 
-  // ✅ If the parent changes `resetKey` (e.g., new game), reset skipUsed
-  React.useEffect(() => {
-    setSkipUsed(false);
-  }, [resetKey]);
-
   const byeWeekTeams: NFLTeam[] = [
-    "Arizona Cardinals",
-    "Detroit Lions",
-    "Jacksonville Jaguars",
-    "Las Vegas Raiders",
-    "Los Angeles Rams",
-    "Seattle Seahawks"
+    "Arizona Cardinals", "Detroit Lions", "Jacksonville Jaguars",
+    "Las Vegas Raiders", "Los Angeles Rams", "Seattle Seahawks"
   ];
+
+  useEffect(() => {
+    if (selectedTeam === null) setSkipUsed(false);
+  }, [selectedTeam]);
 
   const chooseTeam = () => {
     if (spinning) return;
     setSpinning(true);
 
     const activeTeams = teams.filter(team => !byeWeekTeams.includes(team));
-
     if (activeTeams.length === 0) {
-      alert("No teams available this week — all are on bye!");
+      alert("No teams available this week!");
       setSpinning(false);
       return;
     }
@@ -137,31 +84,20 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam, resetKey }: W
       ) : (
         <>
           <div className="relative w-80 h-80">
-            <div
-              className="absolute w-80 h-80 rounded-full border-4 border-gray-700 flex items-center justify-center overflow-hidden"
-            >
+            <div className="absolute w-80 h-80 rounded-full border-4 border-gray-700 flex items-center justify-center overflow-hidden">
               <div
                 className="absolute w-full h-full"
-                style={{
-                  backgroundColor: selectedTeam ? teamColors[selectedTeam] : "#4B5EAA",
-                }}
+                style={{ backgroundColor: teamColors[selectedTeam] }}
               />
               <div
                 className="absolute text-xl md:text-2xl lg:text-3xl font-bold text-white text-center"
-                style={{
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "260px",
-                  whiteSpace: "nowrap",
-                }}
+                style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: "260px", whiteSpace: "nowrap" }}
               >
                 {selectedTeam}
               </div>
             </div>
           </div>
 
-          {/* ✅ Skip button never reappears after being used */}
           {!skipUsed && (
             <button
               onClick={handleSkip}
@@ -180,6 +116,7 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam, resetKey }: W
     </div>
   );
 }
+
 
 
 
