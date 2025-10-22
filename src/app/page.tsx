@@ -1,170 +1,101 @@
 "use client"
 
-import Image from "next/image"
-import { useState } from "react"
+import React, { useState } from "react"
 import Wheel from "../components/Wheel"
 import PlayerPicker from "../components/PlayerPicker"
-import teams from "../data/teams.json"
-import players from "../data/players.json"
+import playersData from "../data/players.json"
 
-// Define NFLTeam type
-type NFLTeam = 
-  | "Arizona Cardinals"
-  | "Atlanta Falcons"
-  | "Baltimore Ravens"
-  | "Buffalo Bills"
-  | "Carolina Panthers"
-  | "Chicago Bears"
-  | "Cincinnati Bengals"
-  | "Cleveland Browns"
-  | "Dallas Cowboys"
-  | "Denver Broncos"
-  | "Detroit Lions"
-  | "Green Bay Packers"
-  | "Houston Texans"
-  | "Indianapolis Colts"
-  | "Jacksonville Jaguars"
-  | "Kansas City Chiefs"
-  | "Las Vegas Raiders"
-  | "Los Angeles Chargers"
-  | "Los Angeles Rams"
-  | "Miami Dolphins"
-  | "Minnesota Vikings"
-  | "New England Patriots"
-  | "New Orleans Saints"
-  | "New York Giants"
-  | "New York Jets"
-  | "Philadelphia Eagles"
-  | "Pittsburgh Steelers"
-  | "San Francisco 49ers"
-  | "Seattle Seahawks"
-  | "Tampa Bay Buccaneers"
-  | "Tennessee Titans"
-  | "Washington Commanders"
+interface Player {
+  name?: string
+  position: "QB" | "WR" | "RB" | "TE" | "K" | "DEF"
+  team: string
+}
 
-// Your fantasy lineup structure
-const lineupTemplate = {
-  QB: null,
-  WR1: null,
-  WR2: null,
-  RB1: null,
-  RB2: null,
-  TE: null,
-  FLEX: null,
-  K: null,
-  DEF: null,
+type Roster = {
+  QB: Player | null
+  WR1: Player | null
+  WR2: Player | null
+  RB1: Player | null
+  RB2: Player | null
+  TE: Player | null
+  FLEX: Player | null
+  K: Player | null
+  DEF: Player | null
 }
 
 export default function Home() {
-  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null)
-  const [lineup, setLineup] = useState<Record<string, string | null>>(lineupTemplate)
-  const [message, setMessage] = useState<string>("")
+  const teams = Object.keys(playersData)
+  const [selectedTeam, setSelectedTeam] = useState<string | null>(null)
+  const [roster, setRoster] = useState<Roster>({
+    QB: null, WR1: null, WR2: null, RB1: null, RB2: null,
+    TE: null, FLEX: null, K: null, DEF: null,
+  })
 
-  // Helper to check if lineup is full
-  const isLineupFull = Object.values(lineup).every((slot) => slot !== null)
-
-  // When a player is picked
-  const handlePickPlayer = (player: string) => {
-    // determine position from player name (you can adjust how you store this)
-    const playerPosition = getPlayerPosition(player)
-
-    if (!playerPosition) {
-      setMessage("Could not determine player position.")
-      return
-    }
-
-    // find the correct open slot for that position
-    const openSlotKey = findOpenSlotForPosition(playerPosition, lineup)
-
-    if (!openSlotKey) {
-      setMessage(`You already filled all ${playerPosition} positions! Spin again.`)
-      return
-    }
-
-    // fill the slot
-    setLineup((prev) => ({
-      ...prev,
-      [openSlotKey]: player,
-    }))
-
-    // reset for next spin
+  const addPlayerToRoster = (player: Player) => {
+    setRoster((prev) => {
+      switch (player.position) {
+        case "QB": return { ...prev, QB: player }
+        case "WR":
+          if (!prev.WR1) return { ...prev, WR1: player }
+          if (!prev.WR2) return { ...prev, WR2: player }
+          if (!prev.FLEX) return { ...prev, FLEX: player }
+          return prev
+        case "RB":
+          if (!prev.RB1) return { ...prev, RB1: player }
+          if (!prev.RB2) return { ...prev, RB2: player }
+          if (!prev.FLEX) return { ...prev, FLEX: player }
+          return prev
+        case "TE":
+          if (!prev.TE) return { ...prev, TE: player }
+          if (!prev.FLEX) return { ...prev, FLEX: player }
+          return prev
+        case "K": return { ...prev, K: player }
+        case "DEF": return { ...prev, DEF: player }
+        default: return prev
+      }
+    })
     setSelectedTeam(null)
-    setMessage("")
   }
 
-  // --- helper functions ---
-  const getPlayerPosition = (player: string): string | null => {
-    // Example assumes player string looks like "Patrick Mahomes - QB"
-    const parts = player.split("-")
-    if (parts.length < 2) return null
-    return parts[1].trim().toUpperCase()
-  }
-
-  const findOpenSlotForPosition = (pos: string, lineup: Record<string, string | null>): string | null => {
-    if (pos === "QB" && !lineup.QB) return "QB"
-    if (pos === "RB") return !lineup.RB1 ? "RB1" : !lineup.RB2 ? "RB2" : lineup.FLEX ? null : "FLEX"
-    if (pos === "WR") return !lineup.WR1 ? "WR1" : !lineup.WR2 ? "WR2" : lineup.FLEX ? null : "FLEX"
-    if (pos === "TE" && !lineup.TE) return "TE"
-    if (pos === "K" && !lineup.K) return "K"
-    if (pos === "DEF" && !lineup.DEF) return "DEF"
-    return null
-  }
+  const isRosterComplete = () =>
+    roster.QB && roster.WR1 && roster.WR2 && roster.RB1 && roster.RB2 &&
+    roster.TE && roster.FLEX && roster.K && roster.DEF
 
   return (
-    <div className="font-sans flex flex-col items-center min-h-screen p-8">
-      <h1 className="text-3xl font-bold mb-8">Fantasy Wheel Draft!</h1>
-
-      {isLineupFull ? (
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">🎉 Draft Complete!</h2>
-          <ul className="text-left">
-            {Object.entries(lineup).map(([pos, player]) => (
-              <li key={pos} className="mb-1">
-                <strong>{pos}:</strong> {player}
-              </li>
-            ))}
-          </ul>
-          <button
-            className="mt-6 px-4 py-2 bg-blue-600 text-white rounded"
-            onClick={() => {
-              setLineup(lineupTemplate)
-              setSelectedTeam(null)
-              setMessage("")
-            }}
-          >
-            Restart Draft
-          </button>
-        </div>
-      ) : (
-        <>
-          {/* --- Step 1: Spin Wheel --- */}
-          <Wheel teams={teams as NFLTeam[]} onSelectTeam={setSelectedTeam} selectedTeam={selectedTeam} />
-
-          {/* --- Step 2: Show Player Picker --- */}
-          {selectedTeam && (
-            <PlayerPicker
-              team={selectedTeam}
-              players={players}
-              onPickPlayer={handlePickPlayer}
-            />
-          )}
-
-          {/* --- Step 3: Show lineup and message --- */}
-          <div className="mt-8 w-full max-w-md">
-            <h2 className="text-xl font-bold mb-2 text-center">Your Lineup</h2>
-            <ul className="divide-y divide-gray-300">
-              {Object.entries(lineup).map(([pos, player]) => (
-                <li key={pos} className="py-1 flex justify-between">
-                  <span className="font-semibold">{pos}</span>
-                  <span>{player ?? <span className="text-gray-400">Open</span>}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {message && <p className="text-red-600 mt-4">{message}</p>}
-        </>
+    <div className="flex flex-col items-center gap-6 p-6 min-h-screen bg-gray-900 text-white">
+      <h1 className="text-3xl font-bold">Fantasy Wheel Draft</h1>
+      
+      <Wheel teams={teams} selectedTeam={selectedTeam} onSelectTeam={setSelectedTeam} />
+      
+      {selectedTeam && (
+        <PlayerPicker
+          team={selectedTeam}
+          players={playersData}
+          onPickPlayer={addPlayerToRoster}
+          roster={roster}
+        />
       )}
+      
+      <div className="grid grid-cols-2 gap-4 bg-gray-800 p-6 rounded-xl w-full max-w-lg">
+        <div>QB: {roster.QB?.name ?? "—"}</div>
+        <div>WR1: {roster.WR1?.name ?? "—"}</div>
+        <div>WR2: {roster.WR2?.name ?? "—"}</div>
+        <div>RB1: {roster.RB1?.name ?? "—"}</div>
+        <div>RB2: {roster.RB2?.name ?? "—"}</div>
+        <div>TE: {roster.TE?.name ?? "—"}</div>
+        <div>FLEX: {roster.FLEX?.name ?? "—"}</div>
+        <div>K: {roster.K?.name ?? "—"}</div>
+        <div>DEF: {roster.DEF?.name ?? "—"}</div>
+      </div>
+      
+      <button
+        disabled={!isRosterComplete()}
+        className={`px-6 py-3 mt-4 rounded-lg font-semibold ${
+          isRosterComplete() ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-500 cursor-not-allowed"
+        }`}
+      >
+        {isRosterComplete() ? "Submit Team" : `${9 - Object.values(roster).filter(Boolean).length} spots left`}
+      </button>
     </div>
   )
 }

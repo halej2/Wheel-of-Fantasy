@@ -3,9 +3,10 @@
 import React from "react"
 
 interface Player {
-  name?: string
+  name: string // Changed to required since DEF now has name
   position: "QB" | "WR" | "RB" | "TE" | "K" | "DEF"
   team: string
+  injuryStatus?: string // Optional, as not all players may have this
 }
 
 interface PlayerPickerProps {
@@ -14,8 +15,10 @@ interface PlayerPickerProps {
   onPickPlayer: (player: Player) => void
   roster: {
     QB: Player | null
-    WR: Player[]
-    RB: Player[]
+    WR1: Player | null
+    WR2: Player | null
+    RB1: Player | null
+    RB2: Player | null
     TE: Player | null
     FLEX: Player | null
     K: Player | null
@@ -33,9 +36,9 @@ export default function PlayerPicker({ team, players, onPickPlayer, roster }: Pl
       case "QB":
         return !roster.QB
       case "WR":
-        return roster.WR.length < 2 || (!roster.FLEX && ["WR", "RB", "TE"].includes(p.position))
+        return !roster.WR1 || !roster.WR2 || (!roster.FLEX && ["WR", "RB", "TE"].includes(p.position))
       case "RB":
-        return roster.RB.length < 2 || (!roster.FLEX && ["WR", "RB", "TE"].includes(p.position))
+        return !roster.RB1 || !roster.RB2 || (!roster.FLEX && ["WR", "RB", "TE"].includes(p.position))
       case "TE":
         return !roster.TE || (!roster.FLEX && ["WR", "RB", "TE"].includes(p.position))
       case "K":
@@ -54,11 +57,11 @@ export default function PlayerPicker({ team, players, onPickPlayer, roster }: Pl
         {eligiblePlayers.length > 0 ? (
           eligiblePlayers.map((player, idx) => (
             <button
-              key={`${player.name ?? "Defense"}-${player.position}-${idx}`} // fallback key
+              key={`${player.name}-${player.position}-${idx}`}
               onClick={() => onPickPlayer(player)}
               className="px-4 py-2 bg-green-500 text-white rounded text-left"
             >
-              {player.name ?? "Defense"} ({player.position})
+              {player.name} ({player.position})
             </button>
           ))
         ) : (

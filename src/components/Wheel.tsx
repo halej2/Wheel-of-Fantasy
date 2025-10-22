@@ -1,9 +1,7 @@
 "use client"
 
-// Import React hooks
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-// Define the union type for all NFL team names
 type NFLTeam = 
   | "Arizona Cardinals"
   | "Atlanta Falcons"
@@ -38,7 +36,6 @@ type NFLTeam =
   | "Tennessee Titans"
   | "Washington Commanders";
 
-// Team color mapping for all 32 NFL teams (official primary HEX colors)
 const teamColors: Record<NFLTeam, string> = {
   "Arizona Cardinals": "#97233F",
   "Atlanta Falcons": "#A6192E",
@@ -78,28 +75,53 @@ interface WheelProps {
   teams: NFLTeam[];
   onSelectTeam: (team: NFLTeam) => void;
   selectedTeam: NFLTeam | null;
+  // ✅ Add this prop so parent can reset skipUsed when new roster starts
+  resetKey?: string | number;
 }
 
-export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps) {
+export default function Wheel({ teams, onSelectTeam, selectedTeam, resetKey }: WheelProps) {
   const [spinning, setSpinning] = useState(false);
+  const [skipUsed, setSkipUsed] = useState(false);
 
-  useEffect(() => {
-    if (selectedTeam) {
-      console.log("Selected team for color:", selectedTeam); // Debug the selected team
-    }
-  }, [selectedTeam]);
+  // ✅ If the parent changes `resetKey` (e.g., new game), reset skipUsed
+  React.useEffect(() => {
+    setSkipUsed(false);
+  }, [resetKey]);
+
+  const byeWeekTeams: NFLTeam[] = [
+    "Arizona Cardinals",
+    "Detroit Lions",
+    "Jacksonville Jaguars",
+    "Las Vegas Raiders",
+    "Los Angeles Rams",
+    "Seattle Seahawks"
+  ];
 
   const chooseTeam = () => {
     if (spinning) return;
     setSpinning(true);
 
-    const randomIndex = Math.floor(Math.random() * teams.length);
-    const chosenTeam = teams[randomIndex];
+    const activeTeams = teams.filter(team => !byeWeekTeams.includes(team));
+
+    if (activeTeams.length === 0) {
+      alert("No teams available this week — all are on bye!");
+      setSpinning(false);
+      return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * activeTeams.length);
+    const chosenTeam = activeTeams[randomIndex];
 
     setTimeout(() => {
       setSpinning(false);
       onSelectTeam(chosenTeam);
-    }, 500); // Short delay for a slight transition feel
+    }, 500);
+  };
+
+  const handleSkip = () => {
+    if (skipUsed) return;
+    setSkipUsed(true);
+    chooseTeam();
   };
 
   return (
@@ -113,31 +135,53 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
           Choose a Team
         </button>
       ) : (
-        <div className="relative w-80 h-80">
-          <div
-            className="absolute w-80 h-80 rounded-full border-4 border-gray-700 flex items-center justify-center overflow-hidden"
-          >
+        <>
+          <div className="relative w-80 h-80">
             <div
-              className="absolute w-full h-full"
-              style={{
-                backgroundColor: selectedTeam ? teamColors[selectedTeam] : "#4B5EAA", // Safe access with typed key
-              }}
-            />
-            <div
-              className="absolute text-2xl font-semibold text-white whitespace-nowrap"
-              style={{
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-                textAlign: "center",
-                width: "200px",
-              }}
+              className="absolute w-80 h-80 rounded-full border-4 border-gray-700 flex items-center justify-center overflow-hidden"
             >
-              {selectedTeam}
+              <div
+                className="absolute w-full h-full"
+                style={{
+                  backgroundColor: selectedTeam ? teamColors[selectedTeam] : "#4B5EAA",
+                }}
+              />
+              <div
+                className="absolute text-xl md:text-2xl lg:text-3xl font-bold text-white text-center"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "260px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {selectedTeam}
+              </div>
             </div>
           </div>
-        </div>
+
+          {/* ✅ Skip button never reappears after being used */}
+          {!skipUsed && (
+            <button
+              onClick={handleSkip}
+              className="px-5 py-2 bg-yellow-500 text-black font-semibold rounded-lg mt-2 hover:bg-yellow-600 transition-colors"
+            >
+              Skip This Team
+            </button>
+          )}
+
+          <div className="mt-4 text-sm text-gray-300 text-center max-w-xs">
+            <p className="font-semibold mb-1">Bye Week Teams:</p>
+            <p>{byeWeekTeams.join(", ")}</p>
+          </div>
+        </>
       )}
     </div>
   );
 }
+
+
+
+
+
