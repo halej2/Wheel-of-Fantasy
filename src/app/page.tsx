@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Wheel from "../components/Wheel";
 import PlayerPicker from "../components/PlayerPicker";
 import playersData from "../data/players.json";
+import type { Player } from "../types"; // ✅ Proper import if exists, else defined below
 
 // ---------- Types ----------
 interface Player {
@@ -25,19 +26,21 @@ type Roster = {
   DEF: Player | null;
 };
 
+type NFLTeam = string;
+
 // ---------- Login / Signup Form ----------
 interface AuthFormProps {
   onLogin: (userId: string) => void;
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [mode, setMode] = useState<"login" | "signup">("login");
-  const [error, setError] = useState("");
-  const [loggingIn, setLoggingIn] = useState(false); // ✅ NEW: Loading state
+  const [error, setError] = useState<string>("");
+  const [loggingIn, setLoggingIn] = useState<boolean>(false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     setError("");
     setLoggingIn(true);
     const endpoint = `/api/auth/${mode}`;
@@ -50,7 +53,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
       const data = await res.json();
       if (res.ok) {
         onLogin(data.userId);
-        // ✅ MAGIC: Auto-reload after 300ms (cookie sync)
         setTimeout(() => window.location.reload(), 300);
       } else {
         setError(data.error || "Something went wrong");
@@ -60,7 +62,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
     } finally {
       setLoggingIn(false);
     }
-  };
+  }, [username, password, mode, onLogin]);
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-sm bg-gray-800 p-6 rounded-xl">
@@ -70,7 +72,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
         className="p-2 rounded bg-gray-700 text-white"
         placeholder="Username"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
         disabled={loggingIn}
       />
       <input
@@ -78,7 +80,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
         placeholder="Password"
         type="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
         disabled={loggingIn}
       />
       <button
@@ -94,7 +96,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
       </button>
       <button
         className="text-sm text-gray-300 underline"
-        onClick={() => setMode(mode === "login" ? "signup" : "login")}
+        onClick={() => setMode((prev) => (prev === "login" ? "signup" : "login"))}
         disabled={loggingIn}
       >
         {mode === "login" ? "Create an account" : "Already have an account?"}
@@ -106,12 +108,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
 // ---------- Main Home Page ----------
 export default function Home() {
   const router = useRouter();
-  // ✅ FIXED: Added type to match Wheel component
-  const teams: any[] = Object.keys(playersData);
+  const teams: NFLTeam[] = Object.keys(playersData) as NFLTeam[]; // ✅ FIXED: No 'any'
 
   const [userId, setUserId] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null);
   const [roster, setRoster] = useState<Roster>({
     QB: null,
     WR1: null,
@@ -123,37 +124,44 @@ export default function Home() {
     K: null,
     DEF: null,
   });
-  const [skipsUsed, setSkipsUsed] = useState(0);
+  const [skipsUsed, setSkipsUsed] = useState<number>(0);
+  const [error, setError] = useState<string>("");
   const maxSkips = 1;
-  const [error, setError] = useState("");
 
-  // ✅ BULLETPROOF: Runs on mount, handles login/refresh perfectly
   useEffect(() => {
-    async function load() {
+    let isMounted = true;
+    
+    const load = async () => {
       try {
         const res = await fetch("/api/roster/get");
         if (res.status === 401) {
-          setUserId(null); // Show login
-          setLoading(false);
+          if (isMounted) {
+            setUserId(null);
+            setLoading(false);
+          }
           return;
         }
         const data = await res.json();
-        if (data.roster) setRoster(data.roster);
-        setSkipsUsed(data.skipsUsed ?? 0);
-        setUserId("authenticated");
-      } catch (e) {
-        console.error("Load error:", e);
-      } finally {
-        setLoading(false);
+        if (isMounted) {
+          if (data.roster) setRoster(data.roster);
+          setSkipsUsed(data.skipsUsed ?? 0);
+          setUserId("authenticated");
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Load error:", error);
+        if (isMounted) setLoading(false);
       }
-    }
+    };
     load();
-  }, []); // ✅ EMPTY deps = runs ONCE on mount
 
-  // ---------- Save helper ----------
-  const persist = async (newRoster: Roster, newSkips?: number) => {
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const persist = useCallback(async (newRoster: Roster, newSkips?: number) => {
     try {
-      // ✅ FIXED: Replaced 'any' with proper type
       const payload: { roster: Roster; skipsUsed?: number } = { roster: newRoster };
       if (newSkips !== undefined) payload.skipsUsed = newSkips;
 
@@ -171,13 +179,15 @@ export default function Home() {
     } catch {
       setError("Server error");
     }
-  };
+  }, []);
 
-  // ---------- Add player ----------
-  const addPlayerToRoster = async (player: Player) => {
-    const alreadyPicked = Object.values(roster).some(
+  const addPlayerToRoster = useCallback(async (player: Player) => {
+    // ✅ FIXED: Proper type assertion
+    const rosterEntries = Object.values(roster) as (Player | null)[];
+    const alreadyPicked = rosterEntries.some(
       (p) => p && p.name === player.name && p.team === player.team
     );
+    
     if (alreadyPicked) {
       setError(`${player.name} is already on your roster!`);
       setTimeout(() => setError(""), 3000);
@@ -220,19 +230,17 @@ export default function Home() {
     setRoster(newRoster);
     setSelectedTeam(null);
     await persist(newRoster, skipsUsed);
-  };
+  }, [roster, skipsUsed, persist]);
 
-  // ---------- Skip ----------
-  const skipTeam = async () => {
+  const skipTeam = useCallback(async () => {
     if (skipsUsed >= maxSkips) return;
-    setSkipsUsed((c) => c + 1);
+    setSkipsUsed((prev) => prev + 1);
     setSelectedTeam(null);
     await persist(roster, skipsUsed + 1);
-  };
+  }, [skipsUsed, roster, persist]);
 
-  // ---------- Reset ----------
-  const resetRoster = async () => {
-    const empty: Roster = {
+  const resetRoster = useCallback(async () => {
+    const emptyRoster: Roster = {
       QB: null,
       WR1: null,
       WR2: null,
@@ -243,13 +251,12 @@ export default function Home() {
       K: null,
       DEF: null,
     };
-    setRoster(empty);
+    setRoster(emptyRoster);
     setSkipsUsed(0);
-    await persist(empty, 0);
-  };
+    await persist(emptyRoster, 0);
+  }, [persist]);
 
-  // ---------- Logout ----------
-  const handleLogout = async () => {
+  const handleLogout = useCallback(async () => {
     await fetch("/api/auth/logout", { method: "POST" });
     setUserId(null);
     setRoster({
@@ -264,9 +271,10 @@ export default function Home() {
       DEF: null,
     });
     router.refresh();
-  };
+  }, [router]);
 
-  const filled = Object.values(roster).filter(Boolean).length;
+  // ✅ FIXED: Proper type assertion
+  const filled = (Object.values(roster) as (Player | null)[]).filter(Boolean).length;
   const spotsLeft = 9 - filled;
 
   if (loading) return <div className="p-6 text-white">Loading...</div>;
