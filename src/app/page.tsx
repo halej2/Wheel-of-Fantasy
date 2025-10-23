@@ -152,7 +152,8 @@ export default function Home() {
   // ---------- Save helper ----------
   const persist = async (newRoster: Roster, newSkips?: number) => {
     try {
-      const payload: any = { roster: newRoster };
+      // ✅ FIXED: Replaced 'any' with proper type
+      const payload: { roster: Roster; skipsUsed?: number } = { roster: newRoster };
       if (newSkips !== undefined) payload.skipsUsed = newSkips;
 
       const res = await fetch("/api/roster/save", {
