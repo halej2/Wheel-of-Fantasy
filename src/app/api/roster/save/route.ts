@@ -3,34 +3,39 @@ import prisma from "@/lib/prisma";
 import jwt from "jsonwebtoken";
 
 export async function POST(req: NextRequest) {
-  const token = req.cookies.get("auth_token")?.value;
-  if (!token) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  let decoded;
   try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: number };
-  } catch (error) {
-    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
-  }
+    const token = req.cookies.get("auth_token")?.value;
+    if (!token) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { roster } = await req.json();
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: number };
+    const { roster, skipsUsed } = await req.json();
 
-  if (!roster || typeof roster !== "object") {
-    return NextResponse.json({ error: "Invalid roster: Must be an object" }, { status: 400 });
-  }
+    if (!roster || typeof roster !== "object") {
+      return NextResponse.json({ error: "Invalid roster" }, { status: 400 });
+    }
 
-  try {
+    // ✅ FIX: Use update OR create (works for NEW accounts)
     await prisma.roster.upsert({
       where: { userId: decoded.userId },
-      update: { players: roster },
-      create: { userId: decoded.userId, players: roster },
+      update: { 
+        players: roster,
+        ...(skipsUsed !== undefined && { skipsUsed })
+      },
+      create: { 
+        userId: decoded.userId, 
+        players: roster, 
+        skipsUsed: skipsUsed ?? 0 
+      },
     });
 
-    return NextResponse.json({ message: "Roster saved successfully" });
+    return NextResponse.json({ message: "Saved" });
   } catch (error) {
-    console.error(error);
+    console.error("Save error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
+}
+
+// ✅ ADD THIS: Also allow PUT method (backup)
+export async function PUT(req: NextRequest) {
+  return POST(req); // Same logic
 }

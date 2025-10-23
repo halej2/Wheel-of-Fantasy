@@ -3,10 +3,10 @@
 import React from "react"
 
 interface Player {
-  name: string // Changed to required since DEF now has name
+  name: string
   position: "QB" | "WR" | "RB" | "TE" | "K" | "DEF"
   team: string
-  injuryStatus?: string // Optional, as not all players may have this
+  injuryStatus?: string
 }
 
 interface PlayerPickerProps {
@@ -31,6 +31,16 @@ export default function PlayerPicker({ team, players, onPickPlayer, roster }: Pl
 
   const teamPlayers = players[team] || []
 
+  // ✅ CHECK IF PLAYER IS ALREADY PICKED (ANYWHERE ON ROSTER)
+  const isPlayerPicked = (player: Player) => {
+    return Object.values(roster).some((rosterPlayer) =>
+      rosterPlayer && 
+      rosterPlayer.name === player.name && 
+      rosterPlayer.team === player.team
+    )
+  }
+
+  // ✅ YOUR EXISTING ELIGIBILITY LOGIC (KEEPING IT!)
   const eligiblePlayers = teamPlayers.filter((p) => {
     switch (p.position) {
       case "QB":
@@ -55,17 +65,33 @@ export default function PlayerPicker({ team, players, onPickPlayer, roster }: Pl
       <h2 className="text-xl font-bold">{team} Players</h2>
       <div className="flex flex-col gap-2 mt-2">
         {eligiblePlayers.length > 0 ? (
-          eligiblePlayers.map((player, idx) => (
-            <button
-              key={`${player.name}-${player.position}-${idx}`}
-              onClick={() => onPickPlayer(player)}
-              className="px-4 py-2 bg-green-500 text-white rounded text-left"
-            >
-              {player.name} ({player.position})
-            </button>
-          ))
+          eligiblePlayers.map((player, idx) => {
+            const picked = isPlayerPicked(player)
+            
+            return (
+              <button
+                key={`${player.name}-${player.position}-${idx}`}
+                onClick={() => !picked && onPickPlayer(player)} // ✅ Only clickable if NOT picked
+                disabled={picked}
+                className={`
+                  px-4 py-2 rounded text-left transition-all duration-200 font-medium
+                  ${picked
+                    ? "bg-gray-600 text-gray-400 cursor-not-allowed line-through"
+                    : "bg-green-500 hover:bg-green-600 text-white shadow-sm hover:shadow-md"
+                  }
+                `}
+              >
+                {player.name} ({player.position})
+                {picked && " ✓"}
+              </button>
+            )
+          })
         ) : (
-          <p>No eligible players available from this team.</p>
+          <p className="text-gray-400 text-center py-4 bg-gray-800 rounded p-4">
+            No eligible players available from this team. 
+            <br />
+            <span className="text-sm">Try another team or use your skip! 🎯</span>
+          </p>
         )}
       </div>
     </div>

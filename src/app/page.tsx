@@ -35,9 +35,11 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [error, setError] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false); // ✅ NEW: Loading state
 
   const handleSubmit = async () => {
     setError("");
+    setLoggingIn(true);
     const endpoint = `/api/auth/${mode}`;
     try {
       const res = await fetch(endpoint, {
@@ -48,12 +50,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
       const data = await res.json();
       if (res.ok) {
         onLogin(data.userId);
+        // ✅ MAGIC: Auto-reload after 300ms (cookie sync)
+        setTimeout(() => window.location.reload(), 300);
       } else {
         setError(data.error || "Something went wrong");
       }
-    } catch (err) {
+    } catch {
       setError("Server error");
-      console.error(err);
+    } finally {
+      setLoggingIn(false);
     }
   };
 
@@ -66,6 +71,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        disabled={loggingIn}
       />
       <input
         className="p-2 rounded bg-gray-700 text-white"
@@ -73,16 +79,23 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        disabled={loggingIn}
       />
       <button
-        className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition-colors"
+        disabled={loggingIn}
+        className={`px-4 py-2 rounded transition-colors ${
+          loggingIn
+            ? "bg-gray-500 cursor-not-allowed"
+            : "bg-blue-600 hover:bg-blue-700"
+        }`}
         onClick={handleSubmit}
       >
-        {mode === "login" ? "Login" : "Sign Up"}
+        {loggingIn ? "Logging in..." : mode === "login" ? "Login" : "Sign Up"}
       </button>
       <button
         className="text-sm text-gray-300 underline"
         onClick={() => setMode(mode === "login" ? "signup" : "login")}
+        disabled={loggingIn}
       >
         {mode === "login" ? "Create an account" : "Already have an account?"}
       </button>
@@ -94,6 +107,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
 export default function Home() {
   const router = useRouter();
   const teams = Object.keys(playersData);
+
   const [userId, setUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
@@ -108,85 +122,115 @@ export default function Home() {
     K: null,
     DEF: null,
   });
+  const [skipsUsed, setSkipsUsed] = useState(0);
+  const maxSkips = 1;
   const [error, setError] = useState("");
 
-  // ---------- Check auth and load roster ----------
+  // ✅ BULLETPROOF: Runs on mount, handles login/refresh perfectly
   useEffect(() => {
-    async function checkAuthAndFetchRoster() {
+    async function load() {
       try {
         const res = await fetch("/api/roster/get");
         if (res.status === 401) {
+          setUserId(null); // Show login
           setLoading(false);
           return;
         }
         const data = await res.json();
-        if (data.roster) {
-          setRoster(data.roster);
-        }
-        setUserId("authenticated"); // Indicate authenticated state
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load roster");
+        if (data.roster) setRoster(data.roster);
+        setSkipsUsed(data.skipsUsed ?? 0);
+        setUserId("authenticated");
+      } catch (e) {
+        console.error("Load error:", e);
       } finally {
         setLoading(false);
       }
     }
-    checkAuthAndFetchRoster();
-  }, [router]);
+    load();
+  }, []); // ✅ EMPTY deps = runs ONCE on mount
 
-  // ---------- Add player to roster & auto-save ----------
-  const addPlayerToRoster = async (player: Player) => {
-    const newRoster = { ...roster };
-    switch (player.position) {
-      case "QB":
-        newRoster.QB = player;
-        break;
-      case "WR":
-        if (!roster.WR1) newRoster.WR1 = player;
-        else if (!roster.WR2) newRoster.WR2 = player;
-        else newRoster.FLEX = player;
-        break;
-      case "RB":
-        if (!roster.RB1) newRoster.RB1 = player;
-        else if (!roster.RB2) newRoster.RB2 = player;
-        else newRoster.FLEX = player;
-        break;
-      case "TE":
-        if (!roster.TE) newRoster.TE = player;
-        else newRoster.FLEX = player;
-        break;
-      case "K":
-        newRoster.K = player;
-        break;
-      case "DEF":
-        newRoster.DEF = player;
-        break;
-    }
-    setRoster(newRoster);
-    setSelectedTeam(null);
-
-    // Auto-save roster
+  // ---------- Save helper ----------
+  const persist = async (newRoster: Roster, newSkips?: number) => {
     try {
+      const payload: any = { roster: newRoster };
+      if (newSkips !== undefined) payload.skipsUsed = newSkips;
+
       const res = await fetch("/api/roster/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ roster: newRoster }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const data = await res.json();
-        setError(data.error || "Failed to save roster");
+        setError(data.error || "Failed to save");
       } else {
         setError("");
       }
-    } catch (err) {
-      console.error("Failed to save roster:", err);
+    } catch {
       setError("Server error");
     }
   };
 
-  // ---------- Reset roster ----------
+  // ---------- Add player ----------
+  const addPlayerToRoster = async (player: Player) => {
+    const alreadyPicked = Object.values(roster).some(
+      (p) => p && p.name === player.name && p.team === player.team
+    );
+    if (alreadyPicked) {
+      setError(`${player.name} is already on your roster!`);
+      setTimeout(() => setError(""), 3000);
+      return;
+    }
+
+    const newRoster = { ...roster };
+    switch (player.position) {
+      case "QB":
+        if (newRoster.QB) return;
+        newRoster.QB = player;
+        break;
+      case "WR":
+        if (!newRoster.WR1) newRoster.WR1 = player;
+        else if (!newRoster.WR2) newRoster.WR2 = player;
+        else if (!newRoster.FLEX) newRoster.FLEX = player;
+        else return;
+        break;
+      case "RB":
+        if (!newRoster.RB1) newRoster.RB1 = player;
+        else if (!newRoster.RB2) newRoster.RB2 = player;
+        else if (!newRoster.FLEX) newRoster.FLEX = player;
+        else return;
+        break;
+      case "TE":
+        if (!newRoster.TE) newRoster.TE = player;
+        else if (!newRoster.FLEX) newRoster.FLEX = player;
+        else return;
+        break;
+      case "K":
+        if (newRoster.K) return;
+        newRoster.K = player;
+        break;
+      case "DEF":
+        if (newRoster.DEF) return;
+        newRoster.DEF = player;
+        break;
+    }
+
+    setRoster(newRoster);
+    setSelectedTeam(null);
+    await persist(newRoster, skipsUsed);
+  };
+
+  // ---------- Skip ----------
+  const skipTeam = async () => {
+    if (skipsUsed >= maxSkips) return;
+    setSkipsUsed((c) => c + 1);
+    setSelectedTeam(null);
+    await persist(roster, skipsUsed + 1);
+  };
+
+  // ---------- Reset ----------
   const resetRoster = async () => {
-    const emptyRoster: Roster = {
+    const empty: Roster = {
       QB: null,
       WR1: null,
       WR2: null,
@@ -197,58 +241,31 @@ export default function Home() {
       K: null,
       DEF: null,
     };
-    setRoster(emptyRoster);
-    try {
-      const res = await fetch("/api/roster/save", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ roster: emptyRoster }),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        setError(data.error || "Failed to reset roster");
-      } else {
-        setError("");
-      }
-    } catch (err) {
-      console.error("Failed to reset roster:", err);
-      setError("Server error");
-    }
+    setRoster(empty);
+    setSkipsUsed(0);
+    await persist(empty, 0);
   };
 
   // ---------- Logout ----------
   const handleLogout = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" });
-      setUserId(null);
-      setRoster({
-        QB: null,
-        WR1: null,
-        WR2: null,
-        RB1: null,
-        RB2: null,
-        TE: null,
-        FLEX: null,
-        K: null,
-        DEF: null,
-      });
-      router.push("/");
-    } catch (err) {
-      console.error("Failed to logout:", err);
-      setError("Failed to logout");
-    }
+    await fetch("/api/auth/logout", { method: "POST" });
+    setUserId(null);
+    setRoster({
+      QB: null,
+      WR1: null,
+      WR2: null,
+      RB1: null,
+      RB2: null,
+      TE: null,
+      FLEX: null,
+      K: null,
+      DEF: null,
+    });
+    router.refresh();
   };
 
-  const isRosterComplete = () =>
-    roster.QB &&
-    roster.WR1 &&
-    roster.WR2 &&
-    roster.RB1 &&
-    roster.RB2 &&
-    roster.TE &&
-    roster.FLEX &&
-    roster.K &&
-    roster.DEF;
+  const filled = Object.values(roster).filter(Boolean).length;
+  const spotsLeft = 9 - filled;
 
   if (loading) return <div className="p-6 text-white">Loading...</div>;
   if (!userId)
@@ -263,13 +280,16 @@ export default function Home() {
     <div className="flex flex-col items-center gap-6 p-6 min-h-screen bg-gray-900 text-white">
       <h1 className="text-3xl font-bold">Fantasy Wheel Draft</h1>
       {error && <p className="text-red-400">{error}</p>}
+
       <button
         className="px-4 py-2 bg-red-600 rounded hover:bg-red-700 transition-colors"
         onClick={handleLogout}
       >
         Logout
       </button>
+
       <Wheel teams={teams} selectedTeam={selectedTeam} onSelectTeam={setSelectedTeam} />
+
       {selectedTeam && (
         <PlayerPicker
           team={selectedTeam}
@@ -278,6 +298,7 @@ export default function Home() {
           roster={roster}
         />
       )}
+
       <div className="grid grid-cols-2 gap-4 bg-gray-800 p-6 rounded-xl w-full max-w-lg">
         <div>QB: {roster.QB?.name ?? "—"}</div>
         <div>WR1: {roster.WR1?.name ?? "—"}</div>
@@ -289,23 +310,30 @@ export default function Home() {
         <div>K: {roster.K?.name ?? "—"}</div>
         <div>DEF: {roster.DEF?.name ?? "—"}</div>
       </div>
-      <div className="flex gap-4">
+
+      <div className="flex flex-wrap gap-4 items-center justify-center">
         <button
-          disabled={!isRosterComplete()}
-          className={`px-6 py-3 rounded-lg font-semibold ${
-            isRosterComplete() ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-500 cursor-not-allowed"
+          disabled={skipsUsed >= maxSkips}
+          onClick={skipTeam}
+          className={`px-6 py-3 rounded-lg font-semibold flex items-center gap-2 ${
+            skipsUsed >= maxSkips
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-yellow-600 hover:bg-yellow-700"
           }`}
         >
-          {isRosterComplete()
-            ? "Submit Team"
-            : `${9 - Object.values(roster).filter(Boolean).length} spots left`}
+          Skip ({skipsUsed}/{maxSkips})
         </button>
+
         <button
           className="px-6 py-3 bg-gray-600 rounded hover:bg-gray-700 transition-colors"
           onClick={resetRoster}
         >
           Reset Roster
         </button>
+
+        <div className="px-6 py-3 bg-blue-600 rounded-lg text-center font-semibold min-w-[140px]">
+          {spotsLeft} spot{spotsLeft !== 1 ? "s" : ""} left
+        </div>
       </div>
     </div>
   );

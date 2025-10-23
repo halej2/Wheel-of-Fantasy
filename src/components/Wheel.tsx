@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 type NFLTeam =
   | "Arizona Cardinals" | "Atlanta Falcons" | "Baltimore Ravens" | "Buffalo Bills"
@@ -34,16 +34,11 @@ interface WheelProps {
 
 export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps) {
   const [spinning, setSpinning] = useState(false);
-  const [skipUsed, setSkipUsed] = useState(false);
 
   const byeWeekTeams: NFLTeam[] = [
     "Arizona Cardinals", "Detroit Lions", "Jacksonville Jaguars",
     "Las Vegas Raiders", "Los Angeles Rams", "Seattle Seahawks"
   ];
-
-  useEffect(() => {
-    if (selectedTeam === null) setSkipUsed(false);
-  }, [selectedTeam]);
 
   const chooseTeam = () => {
     if (spinning) return;
@@ -63,12 +58,6 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
       setSpinning(false);
       onSelectTeam(chosenTeam);
     }, 500);
-  };
-
-  const handleSkip = () => {
-    if (skipUsed) return;
-    setSkipUsed(true);
-    chooseTeam();
   };
 
   return (
@@ -97,15 +86,6 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
               </div>
             </div>
           </div>
-
-          {!skipUsed && (
-            <button
-              onClick={handleSkip}
-              className="px-5 py-2 bg-yellow-500 text-black font-semibold rounded-lg mt-2 hover:bg-yellow-600 transition-colors"
-            >
-              Skip This Team
-            </button>
-          )}
 
           <div className="mt-4 text-sm text-gray-300 text-center max-w-xs">
             <p className="font-semibold mb-1">Bye Week Teams:</p>

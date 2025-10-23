@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -21,8 +21,9 @@ model User {
 }
 
 model Roster {
-  id      Int     @id @default(autoincrement())
-  userId  Int     @unique
-  user    User    @relation(fields: [userId], references: [id])
-  players Json    // Store roster as JSON object with positions
+  id        Int   @id @default(autoincrement())
+  userId    Int   @unique
+  user      User  @relation(fields: [userId], references: [id])
+  players   Json
+  skipsUsed Int   @default(0)   // NEW
 }
