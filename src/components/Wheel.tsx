@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 
@@ -72,6 +72,7 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
         </button>
       ) : (
         <>
+          {/* ✅ FIXED: Perfect font size + no overflow */}
           <div className="relative w-80 h-80">
             <div className="absolute w-80 h-80 rounded-full border-4 border-gray-700 flex items-center justify-center overflow-hidden">
               <div
@@ -79,8 +80,15 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
                 style={{ backgroundColor: teamColors[selectedTeam] }}
               />
               <div
-                className="absolute text-xl md:text-2xl lg:text-3xl font-bold text-white text-center"
-                style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: "260px", whiteSpace: "nowrap" }}
+                className="absolute text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white text-center px-4 leading-tight"
+                style={{ 
+                  left: "50%", 
+                  top: "50%", 
+                  transform: "translate(-50%, -50%)",
+                  width: "90%",
+                  maxWidth: "240px",
+                  lineHeight: "1.2"
+                }}
               >
                 {selectedTeam}
               </div>

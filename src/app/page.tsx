@@ -106,7 +106,8 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
 // ---------- Main Home Page ----------
 export default function Home() {
   const router = useRouter();
-  const teams = Object.keys(playersData);
+  // ✅ FIXED: Added type to match Wheel component
+  const teams: any[] = Object.keys(playersData);
 
   const [userId, setUserId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
