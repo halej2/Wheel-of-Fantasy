@@ -1,20 +1,19 @@
+// app/page.tsx
 'use client';
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import Wheel from "../components/Wheel";
-import PlayerPicker from "../components/PlayerPicker";
-import playersData from "../data/players.json";
-import type { Player } from "../types"; // ✅ Proper import if exists, else defined below
+import { Trophy, Users, Clock, RotateCw } from 'lucide-react';
 
-// ---------- Types ----------
+// PLAYER & ROSTER TYPES
 interface Player {
-  name?: string;
-  position: "QB" | "WR" | "RB" | "TE" | "K" | "DEF";
+  name: string;
+  position: "QB" | "RB" | "WR" | "TE" | "K" | "DEF";
   team: string;
+  injuryStatus?: string;
 }
 
-type Roster = {
+interface Roster {
   QB: Player | null;
   WR1: Player | null;
   WR2: Player | null;
@@ -24,21 +23,19 @@ type Roster = {
   FLEX: Player | null;
   K: Player | null;
   DEF: Player | null;
-};
+}
 
-type NFLTeam = string;
-
-// ---------- Login / Signup Form ----------
+/* ---------- AUTH FORM ---------- */
 interface AuthFormProps {
-  onLogin: (userId: string) => void;
+  onLogin: (userId: string, username: string) => void; // Add username
 }
 
 const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [mode, setMode] = useState<"login" | "signup">("login");
-  const [error, setError] = useState<string>("");
-  const [loggingIn, setLoggingIn] = useState<boolean>(false);
+  const [error, setError] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false);
 
   const handleSubmit = useCallback(async () => {
     setError("");
@@ -52,7 +49,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
       });
       const data = await res.json();
       if (res.ok) {
-        onLogin(data.userId);
+        onLogin(data.userId, data.username); // Pass username
         setTimeout(() => window.location.reload(), 300);
       } else {
         setError(data.error || "Something went wrong");
@@ -65,289 +62,269 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
   }, [username, password, mode, onLogin]);
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-sm bg-gray-800 p-6 rounded-xl">
-      <h2 className="text-xl font-bold">{mode === "login" ? "Login" : "Sign Up"}</h2>
-      {error && <p className="text-red-400">{error}</p>}
-      <input
-        className="p-2 rounded bg-gray-700 text-white"
-        placeholder="Username"
-        value={username}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
-        disabled={loggingIn}
-      />
-      <input
-        className="p-2 rounded bg-gray-700 text-white"
-        placeholder="Password"
-        type="password"
-        value={password}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-        disabled={loggingIn}
-      />
-      <button
-        disabled={loggingIn}
-        className={`px-4 py-2 rounded transition-colors ${
-          loggingIn
-            ? "bg-gray-500 cursor-not-allowed"
-            : "bg-blue-600 hover:bg-blue-700"
-        }`}
-        onClick={handleSubmit}
-      >
-        {loggingIn ? "Logging in..." : mode === "login" ? "Login" : "Sign Up"}
-      </button>
-      <button
-        className="text-sm text-gray-300 underline"
-        onClick={() => setMode((prev) => (prev === "login" ? "signup" : "login"))}
-        disabled={loggingIn}
-      >
-        {mode === "login" ? "Create an account" : "Already have an account?"}
-      </button>
+    <div className="flex flex-col items-center w-full max-w-sm">
+      <h1 className="text-4xl font-bold mb-2 text-white">Wheel of Fantasy</h1>
+      <p className="text-center text-sm text-gray-300 mb-6 max-w-xs">
+        Bad season? Star players hurt? No problem. Spin the wheel, draft a fresh superstar roster every week — play head-to-head with friends or go solo and chase the highest score!
+      </p>
+      <div className="w-full bg-gray-800 p-6 rounded-xl shadow-lg">
+        <h2 className="text-xl font-bold text-center mb-4">
+          {mode === "login" ? "Login" : "Sign Up"}
+        </h2>
+        {error && <p className="text-red-400 text-sm text-center mb-3">{error}</p>}
+        <input
+          className="w-full p-3 mb-3 rounded bg-gray-700 text-white placeholder-gray-400"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          disabled={loggingIn}
+        />
+        <input
+          className="w-full p-3 mb-4 rounded bg-gray-700 text-white placeholder-gray-400"
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          disabled={loggingIn}
+        />
+        <button
+          disabled={loggingIn}
+          className={`w-full py-3 rounded-lg font-medium transition-colors ${
+            loggingIn
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`}
+          onClick={handleSubmit}
+        >
+          {loggingIn ? "Loading..." : mode === "login" ? "Login" : "Sign Up"}
+        </button>
+        <button
+          className="w-full text-center text-sm text-gray-300 underline mt-3"
+          onClick={() => setMode((prev) => (prev === "login" ? "signup" : "login"))}
+          disabled={loggingIn}
+        >
+          {mode === "login" ? "Create an account" : "Already have an account?"}
+        </button>
+      </div>
     </div>
   );
 };
 
-// ---------- Main Home Page ----------
+/* ---------- MAIN HOME PAGE ---------- */
 export default function Home() {
   const router = useRouter();
-  const teams: NFLTeam[] = Object.keys(playersData) as NFLTeam[]; // ✅ FIXED: No 'any'
 
+  /* ----- USER STATE ----- */
   const [userId, setUserId] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [selectedTeam, setSelectedTeam] = useState<NFLTeam | null>(null);
-  const [roster, setRoster] = useState<Roster>({
-    QB: null,
-    WR1: null,
-    WR2: null,
-    RB1: null,
-    RB2: null,
-    TE: null,
-    FLEX: null,
-    K: null,
-    DEF: null,
-  });
-  const [skipsUsed, setSkipsUsed] = useState<number>(0);
-  const [error, setError] = useState<string>("");
-  const maxSkips = 1;
+  const [username, setUsername] = useState<string | null>(null); // Add username state
+  const [loadingUser, setLoadingUser] = useState(true);
 
+  /* ----- MULTIPLAYER STATE ----- */
+  const [pendingInvites, setPendingInvites] = useState<any[]>([]);
+  const [currentGames, setCurrentGames] = useState<any[]>([]);
+  const [multiLoading, setMultiLoading] = useState(true);
+
+  /* ---------- LOAD ALL DATA ---------- */
   useEffect(() => {
-    let isMounted = true;
-    
-    const load = async () => {
+    let mounted = true;
+    const loadAll = async () => {
       try {
-        const res = await fetch("/api/roster/get");
-        if (res.status === 401) {
-          if (isMounted) {
-            setUserId(null);
-            setLoading(false);
-          }
-          return;
+        // 1. USER
+        const userRes = await fetch("/api/auth/me");
+        if (!userRes.ok) throw new Error("unauth");
+        const { userId, username } = await userRes.json(); // Get username
+        if (!mounted) return;
+        setUserId(userId);
+        setUsername(username); // Set username
+
+        // 2. MULTIPLAYER
+        const [invRes, gamesRes] = await Promise.all([
+          fetch("/api/invite/pending"),
+          fetch("/api/game/current"),
+        ]);
+        const invData = invRes.ok ? await invRes.json() : [];
+        const gamesData = gamesRes.ok ? await gamesRes.json() : [];
+        if (mounted) {
+          setPendingInvites(invData);
+          setCurrentGames(gamesData);
         }
-        const data = await res.json();
-        if (isMounted) {
-          if (data.roster) setRoster(data.roster);
-          setSkipsUsed(data.skipsUsed ?? 0);
-          setUserId("authenticated");
-          setLoading(false);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        if (mounted) {
+          setLoadingUser(false);
+          setMultiLoading(false);
         }
-      } catch (error) {
-        console.error("Load error:", error);
-        if (isMounted) setLoading(false);
       }
     };
-    load();
-
-    return () => {
-      isMounted = false;
-    };
+    loadAll();
+    return () => { mounted = false; };
   }, []);
-
-  const persist = useCallback(async (newRoster: Roster, newSkips?: number) => {
-    try {
-      const payload: { roster: Roster; skipsUsed?: number } = { roster: newRoster };
-      if (newSkips !== undefined) payload.skipsUsed = newSkips;
-
-      const res = await fetch("/api/roster/save", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        setError(data.error || "Failed to save");
-      } else {
-        setError("");
-      }
-    } catch {
-      setError("Server error");
-    }
-  }, []);
-
-  const addPlayerToRoster = useCallback(async (player: Player) => {
-    // ✅ FIXED: Proper type assertion
-    const rosterEntries = Object.values(roster) as (Player | null)[];
-    const alreadyPicked = rosterEntries.some(
-      (p) => p && p.name === player.name && p.team === player.team
-    );
-    
-    if (alreadyPicked) {
-      setError(`${player.name} is already on your roster!`);
-      setTimeout(() => setError(""), 3000);
-      return;
-    }
-
-    const newRoster = { ...roster };
-    switch (player.position) {
-      case "QB":
-        if (newRoster.QB) return;
-        newRoster.QB = player;
-        break;
-      case "WR":
-        if (!newRoster.WR1) newRoster.WR1 = player;
-        else if (!newRoster.WR2) newRoster.WR2 = player;
-        else if (!newRoster.FLEX) newRoster.FLEX = player;
-        else return;
-        break;
-      case "RB":
-        if (!newRoster.RB1) newRoster.RB1 = player;
-        else if (!newRoster.RB2) newRoster.RB2 = player;
-        else if (!newRoster.FLEX) newRoster.FLEX = player;
-        else return;
-        break;
-      case "TE":
-        if (!newRoster.TE) newRoster.TE = player;
-        else if (!newRoster.FLEX) newRoster.FLEX = player;
-        else return;
-        break;
-      case "K":
-        if (newRoster.K) return;
-        newRoster.K = player;
-        break;
-      case "DEF":
-        if (newRoster.DEF) return;
-        newRoster.DEF = player;
-        break;
-    }
-
-    setRoster(newRoster);
-    setSelectedTeam(null);
-    await persist(newRoster, skipsUsed);
-  }, [roster, skipsUsed, persist]);
-
-  const skipTeam = useCallback(async () => {
-    if (skipsUsed >= maxSkips) return;
-    setSkipsUsed((prev) => prev + 1);
-    setSelectedTeam(null);
-    await persist(roster, skipsUsed + 1);
-  }, [skipsUsed, roster, persist]);
-
-  const resetRoster = useCallback(async () => {
-    const emptyRoster: Roster = {
-      QB: null,
-      WR1: null,
-      WR2: null,
-      RB1: null,
-      RB2: null,
-      TE: null,
-      FLEX: null,
-      K: null,
-      DEF: null,
-    };
-    setRoster(emptyRoster);
-    setSkipsUsed(0);
-    await persist(emptyRoster, 0);
-  }, [persist]);
 
   const handleLogout = useCallback(async () => {
     await fetch("/api/auth/logout", { method: "POST" });
     setUserId(null);
-    setRoster({
-      QB: null,
-      WR1: null,
-      WR2: null,
-      RB1: null,
-      RB2: null,
-      TE: null,
-      FLEX: null,
-      K: null,
-      DEF: null,
-    });
+    setUsername(null); // Clear username
     router.refresh();
   }, [router]);
 
-  // ✅ FIXED: Proper type assertion
-  const filled = (Object.values(roster) as (Player | null)[]).filter(Boolean).length;
-  const spotsLeft = 9 - filled;
+  const acceptInvite = async (inviteId: string, gameId: string) => {
+    await fetch("/api/invite/accept", {
+      method: "POST",
+      body: JSON.stringify({ inviteId }),
+    });
+    router.push(`/game/${gameId}`);
+  };
 
-  if (loading) return <div className="p-6 text-white">Loading...</div>;
-  if (!userId)
+  const declineInvite = async (inviteId: string) => {
+    await fetch("/api/invite/decline", {
+      method: "POST",
+      body: JSON.stringify({ inviteId }),
+    });
+    setPendingInvites((list) => list.filter((i) => i.id !== inviteId));
+  };
+
+  /* ---------- RENDER ---------- */
+  if (loadingUser) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
-        <h1 className="text-3xl font-bold mb-4">Fantasy Wheel Draft</h1>
-        <AuthForm onLogin={setUserId} />
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+        <p className="text-xl">Loading…</p>
       </div>
     );
+  }
+
+  if (!userId) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
+        <AuthForm onLogin={(userId, username) => { // Pass username
+          setUserId(userId);
+          setUsername(username);
+        }} />
+      </div>
+    );
+  }
 
   return (
-    <div className="flex flex-col items-center gap-6 p-6 min-h-screen bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold">Fantasy Wheel Draft</h1>
-      {error && <p className="text-red-400">{error}</p>}
+    <div className="flex flex-col items-center gap-8 p-6 min-h-screen bg-gray-900 text-white">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-2">Wheel of Fantasy</h1>
+        <p className="text-gray-400">Draft. Compete. Dominate.</p>
+        <p className="text-sm text-gray-300 mt-1">Logged in as @{username}</p> {/* Show username */}
+      </div>
 
       <button
-        className="px-4 py-2 bg-red-600 rounded hover:bg-red-700 transition-colors"
+        className="px-6 py-2 bg-red-600 rounded-lg font-medium hover:bg-red-700 transition-colors"
         onClick={handleLogout}
       >
         Logout
       </button>
 
-      <Wheel teams={teams} selectedTeam={selectedTeam} onSelectTeam={setSelectedTeam} />
+      {/* MULTIPLAYER SECTIONS */}
+      <div className="w-full max-w-2xl space-y-6">
+        {/* PENDING INVITES */}
+        <section className="bg-gray-800 rounded-xl p-5">
+          <h2 className="text-xl font-semibold mb-3">Pending Invites</h2>
+          {multiLoading ? (
+            <p className="text-gray-400">Loading…</p>
+          ) : pendingInvites.length === 0 ? (
+            <p className="text-gray-400">No pending invites</p>
+          ) : (
+            <div className="space-y-3">
+              {pendingInvites.map((inv) => (
+                <div
+                  key={inv.id}
+                  className="flex items-center justify-between p-3 bg-gray-700 rounded-lg"
+                >
+                  <div>
+                    <p className="font-medium">@{inv.sender.username}</p>
+                    <p className="text-sm text-gray-300">
+                      {inv.sender.id === userId ? "You sent" : "You received"}
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    {inv.receiverId === userId && (
+                      <>
+                        <button
+                          onClick={() => acceptInvite(inv.id, inv.gameId)}
+                          className="px-3 py-1 bg-green-600 rounded text-sm hover:bg-green-700"
+                        >
+                          Accept
+                        </button>
+                        <button
+                          onClick={() => declineInvite(inv.id)}
+                          className="px-3 py-1 bg-red-600 rounded text-sm hover:bg-red-700"
+                        >
+                          Decline
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
 
-      {selectedTeam && (
-        <PlayerPicker
-          team={selectedTeam}
-          players={playersData}
-          onPickPlayer={addPlayerToRoster}
-          roster={roster}
-        />
-      )}
+        {/* CURRENT GAMES */}
+        <section className="bg-gray-800 rounded-xl p-5">
+          <h2 className="text-xl font-semibold mb-3">Current Games</h2>
+          {multiLoading ? (
+            <p className="text-gray-400">Loading…</p>
+          ) : currentGames.length === 0 ? (
+            <div className="text-center py-8 text-gray-400">
+              <Users className="w-12 h-12 mx-auto mb-3 opacity-50" />
+              <p className="text-lg">No games yet</p>
+              <p className="text-sm mt-1">Start a 1v1 with a friend!</p>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {currentGames.map((g) => (
+                <button
+                  key={g.id}
+                  onClick={() => router.push(`/game/${g.id}`)}
+                  className="w-full text-left p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="font-medium">vs @{g.opponent.username}</p>
+                      <p className="text-xs text-gray-400">
+                        {g.status === 'COMPLETED'
+                          ? 'Completed'
+                          : g.status === 'ACTIVE'
+                          ? 'In Progress'
+                          : 'Waiting for opponent'}
+                      </p>
+                    </div>
+                    {g.status === 'COMPLETED' ? (
+                      <Trophy className="w-5 h-5 text-yellow-400" />
+                    ) : g.status === 'ACTIVE' ? (
+                      <RotateCw className="w-5 h-5 text-green-400 animate-spin" />
+                    ) : (
+                      <Clock className="w-5 h-5 text-orange-400" />
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </section>
 
-      <div className="grid grid-cols-2 gap-4 bg-gray-800 p-6 rounded-xl w-full max-w-lg">
-        <div>QB: {roster.QB?.name ?? "—"}</div>
-        <div>WR1: {roster.WR1?.name ?? "—"}</div>
-        <div>WR2: {roster.WR2?.name ?? "—"}</div>
-        <div>RB1: {roster.RB1?.name ?? "—"}</div>
-        <div>RB2: {roster.RB2?.name ?? "—"}</div>
-        <div>TE: {roster.TE?.name ?? "—"}</div>
-        <div>FLEX: {roster.FLEX?.name ?? "—"}</div>
-        <div>K: {roster.K?.name ?? "—"}</div>
-        <div>DEF: {roster.DEF?.name ?? "—"}</div>
-      </div>
-
-      <div className="flex flex-wrap gap-4 items-center justify-center">
-        <button
-          disabled={skipsUsed >= maxSkips}
-          onClick={skipTeam}
-          className={`px-6 py-3 rounded-lg font-semibold flex items-center gap-2 ${
-            skipsUsed >= maxSkips
-              ? "bg-gray-500 cursor-not-allowed"
-              : "bg-yellow-600 hover:bg-yellow-700"
-          }`}
-        >
-          Skip ({skipsUsed}/{maxSkips})
-        </button>
-
-        <button
-          className="px-6 py-3 bg-gray-600 rounded hover:bg-gray-700 transition-colors"
-          onClick={resetRoster}
-        >
-          Reset Roster
-        </button>
-
-        <div className="px-6 py-3 bg-blue-600 rounded-lg text-center font-semibold min-w-[140px]">
-          {spotsLeft} spot{spotsLeft !== 1 ? "s" : ""} left
+        {/* QUICK LINKS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button
+            onClick={() => router.push("/play-friend")}
+            className="px-6 py-3 bg-purple-600 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+          >
+            Play A Friend
+          </button>
+          <button
+            onClick={() => router.push("/solo")}
+            className="px-6 py-3 bg-indigo-600 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+          >
+            Solo Play
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
-
-
