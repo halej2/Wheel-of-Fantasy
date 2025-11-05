@@ -1,23 +1,48 @@
+// src/app/api/invite/accept/route.ts
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { verifyJwt } from "@/lib/auth";
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
-  const payload = await verifyJwt();
-  if (!payload) return NextResponse.json({ error: "Unauth" }, { status: 401 });
+  // 1. GET JWT FROM COOKIE (await cookies!)
+  const cookieStore = await cookies();
+  const token = cookieStore.get("auth_token")?.value;
+  if (!token) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  // 2. VERIFY JWT
+  let payload;
+  try {
+    payload = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+  } catch {
+    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
 
   const { inviteId } = await req.json();
-  const invite = await prisma.invite.findUnique({ where: { id: inviteId } });
-  if (!invite || invite.receiverId !== payload.userId)
+
+  const invite = await prisma.invite.findUnique({
+    where: { id: inviteId },
+    include: { game: true },
+  });
+
+  if (!invite || invite.status !== "PENDING" || invite.receiverId !== parseInt(payload.userId)) {
     return NextResponse.json({ error: "Invalid invite" }, { status: 400 });
+  }
 
   await prisma.$transaction([
-    prisma.invite.update({ where: { id: inviteId }, data: { status: "ACCEPTED" } }),
+    prisma.invite.update({
+      where: { id: inviteId },
+      data: { status: "ACCEPTED" },
+    }),
     prisma.game.update({
       where: { id: invite.gameId },
-      data: { player2Id: payload.userId, status: "ACTIVE" },
+      data: { 
+        player2Id: parseInt(payload.userId),
+        status: "DRAFTING", // ← NOT "ACTIVE"
+        currentTurn: invite.game.player1Id, // Player 1 starts
+      },
     }),
   ]);
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true, gameId: invite.gameId });
 }

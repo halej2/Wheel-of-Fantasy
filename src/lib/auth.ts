@@ -1,24 +1,30 @@
 // src/lib/auth.ts
-import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
-// Helper to bypass Next.js false positive
-async function getAuthCookie() {
-  const cookie = await cookies().get("auth_token");
-  return cookie?.value ?? null;
-}
+let getAuthCookie: () => Promise<string | null>;
 
+/**
+ * Lazy-load cookies() so Next.js doesn't complain
+ */
 export async function verifyJwt() {
-  const token = await getAuthCookie(); // Now safe
+  // Define getAuthCookie on first call
+  if (!getAuthCookie) {
+    const { cookies } = await import("next/headers");
+    getAuthCookie = async () => {
+      const cookieStore = await cookies(); // ✅ await cookies() first
+      const cookie = cookieStore.get("auth_token");
+      return cookie?.value ?? null;
+    };
+  }
 
+  const token = await getAuthCookie();
   if (!token) return null;
 
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET!) as {
+    return jwt.verify(token, process.env.JWT_SECRET!) as {
       userId: string;
       username: string;
     };
-    return payload;
   } catch (error) {
     console.error("JWT verify failed:", error);
     return null;

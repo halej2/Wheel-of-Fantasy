@@ -1,13 +1,23 @@
 // app/api/game/join/route.ts
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { verifyJwt } from "@/lib/auth";
+import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
-  const payload = await verifyJwt();
-  if (!payload) return NextResponse.json({ error: "Unauth" }, { status: 401 });
+  const cookieStore = await cookies();
+  const token = cookieStore.get("auth_token")?.value;
+  if (!token) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  let payload;
+  try {
+    payload = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+  } catch {
+    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
 
   const { code } = await req.json();
+  const userId = parseInt(payload.userId, 10);
 
   const game = await prisma.game.findUnique({
     where: { inviteCode: code },
@@ -15,8 +25,8 @@ export async function POST(req: Request) {
 
   if (!game) return NextResponse.json({ error: "Invalid code" }, { status: 404 });
 
-  // Already player 1? → just return the game
-  if (game.player1Id === payload.userId) {
+  // Already in game?
+  if (game.player1Id === userId || game.player2Id === userId) {
     return NextResponse.json({ gameId: game.id });
   }
 
@@ -24,9 +34,9 @@ export async function POST(req: Request) {
   const updated = await prisma.game.update({
     where: { id: game.id },
     data: {
-      player2Id: payload.userId,   // Int → Int
-      status: "ACTIVE",
-      currentTurn: game.player1Id, // player 1 starts
+      player2Id: userId,
+      status: "DRAFTING",           // ← NOT "ACTIVE"
+      currentTurn: game.player1Id,  // Player 1 starts
     },
   });
 

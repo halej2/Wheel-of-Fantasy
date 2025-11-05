@@ -1,9 +1,8 @@
-// src/app/api/auth/signup/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { cookies } from "next/headers"; // ADD THIS
+import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
@@ -36,7 +35,11 @@ export async function POST(req: NextRequest) {
       { expiresIn: "1h" }
     );
 
-    await cookies().set("auth_token", token, {
+    // ✅ FIX: Await cookies() first
+    const cookieStore = await cookies();
+    cookieStore.set({
+      name: "auth_token",
+      value: token,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
@@ -46,11 +49,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       userId: user.id,
-      username: user.username, // RETURN USERNAME
+      username: user.username,
     });
   } catch (error) {
     console.error("Signup error:", error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
-

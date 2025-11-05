@@ -1,18 +1,19 @@
-// app/page.tsx
+// src/app/page.tsx
 'use client';
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Trophy, Users, Clock, RotateCw } from 'lucide-react';
+import { Trophy, Users, Clock, RotateCw, Bell } from 'lucide-react';
 
+// ──────────────────────────────────────────────────────
 // PLAYER & ROSTER TYPES
+// ──────────────────────────────────────────────────────
 interface Player {
   name: string;
   position: "QB" | "RB" | "WR" | "TE" | "K" | "DEF";
   team: string;
   injuryStatus?: string;
 }
-
 interface Roster {
   QB: Player | null;
   WR1: Player | null;
@@ -25,11 +26,12 @@ interface Roster {
   DEF: Player | null;
 }
 
-/* ---------- AUTH FORM ---------- */
+// ──────────────────────────────────────────────────────
+// AUTH FORM
+// ──────────────────────────────────────────────────────
 interface AuthFormProps {
-  onLogin: (userId: string, username: string) => void; // Add username
+  onLogin: (userId: string, username: string) => void;
 }
-
 const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -44,12 +46,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
     try {
       const res = await fetch(endpoint, {
         method: "POST",
+        credentials: "include", // ← Send cookies
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
       if (res.ok) {
-        onLogin(data.userId, data.username); // Pass username
+        onLogin(data.userId, data.username);
         setTimeout(() => window.location.reload(), 300);
       } else {
         setError(data.error || "Something went wrong");
@@ -90,9 +93,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
         <button
           disabled={loggingIn}
           className={`w-full py-3 rounded-lg font-medium transition-colors ${
-            loggingIn
-              ? "bg-gray-500 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
+            loggingIn ? "bg-gray-500 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
           }`}
           onClick={handleSubmit}
         >
@@ -110,37 +111,57 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
   );
 };
 
-/* ---------- MAIN HOME PAGE ---------- */
+// ──────────────────────────────────────────────────────
+// INVITE BADGE (TOP RIGHT)
+// ──────────────────────────────────────────────────────
+const InviteBadge: React.FC<{ count: number }> = ({ count }) => {
+  if (count === 0) return null;
+  return (
+    <div className="fixed top-4 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg animate-pulse flex items-center gap-2 z-50">
+      <Bell className="w-5 h-5" />
+      <span className="absolute -top-1 -right-1 bg-red-600 text-xs rounded-full w-5 h-5 flex items-center justify-center">
+        {count}
+      </span>
+    </div>
+  );
+};
+
+// ──────────────────────────────────────────────────────
+// MAIN HOME PAGE
+// ──────────────────────────────────────────────────────
 export default function Home() {
   const router = useRouter();
 
-  /* ----- USER STATE ----- */
+  // USER STATE
   const [userId, setUserId] = useState<string | null>(null);
-  const [username, setUsername] = useState<string | null>(null); // Add username state
+  const [username, setUsername] = useState<string | null>(null);
   const [loadingUser, setLoadingUser] = useState(true);
 
-  /* ----- MULTIPLAYER STATE ----- */
+  // MULTIPLAYER STATE
   const [pendingInvites, setPendingInvites] = useState<any[]>([]);
   const [currentGames, setCurrentGames] = useState<any[]>([]);
   const [multiLoading, setMultiLoading] = useState(true);
 
-  /* ---------- LOAD ALL DATA ---------- */
+  // ──────────────────────────────────────────────────
+  // LOAD USER + INVITES + GAMES
+  // ──────────────────────────────────────────────────
   useEffect(() => {
     let mounted = true;
+
     const loadAll = async () => {
       try {
         // 1. USER
-        const userRes = await fetch("/api/auth/me");
+        const userRes = await fetch("/api/auth/me", { credentials: "include" });
         if (!userRes.ok) throw new Error("unauth");
-        const { userId, username } = await userRes.json(); // Get username
+        const { userId: uid, username: uname } = await userRes.json();
         if (!mounted) return;
-        setUserId(userId);
-        setUsername(username); // Set username
+        setUserId(uid);
+        setUsername(uname);
 
         // 2. MULTIPLAYER
         const [invRes, gamesRes] = await Promise.all([
-          fetch("/api/invite/pending"),
-          fetch("/api/game/current"),
+          fetch("/api/invite/pending", { credentials: "include" }),
+          fetch("/api/game/current", { credentials: "include" }),
         ]);
         const invData = invRes.ok ? await invRes.json() : [];
         const gamesData = gamesRes.ok ? await gamesRes.json() : [];
@@ -157,20 +178,42 @@ export default function Home() {
         }
       }
     };
-    loadAll();
-    return () => { mounted = false; };
-  }, []);
 
+    loadAll();
+
+    // POLL INVITES every 12s
+    const poll = setInterval(() => {
+      if (userId) {
+        fetch("/api/invite/pending", { credentials: "include" })
+          .then(r => r.ok && r.json())
+          .then(d => d && setPendingInvites(d));
+      }
+    }, 12_000);
+
+    return () => {
+      mounted = false;
+      clearInterval(poll);
+    };
+  }, [userId]);
+
+  // ──────────────────────────────────────────────────
+  // LOGOUT
+  // ──────────────────────────────────────────────────
   const handleLogout = useCallback(async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
+    await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
     setUserId(null);
-    setUsername(null); // Clear username
+    setUsername(null);
     router.refresh();
   }, [router]);
 
+  // ──────────────────────────────────────────────────
+  // ACCEPT / DECLINE
+  // ──────────────────────────────────────────────────
   const acceptInvite = async (inviteId: string, gameId: string) => {
     await fetch("/api/invite/accept", {
       method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ inviteId }),
     });
     router.push(`/game/${gameId}`);
@@ -179,12 +222,16 @@ export default function Home() {
   const declineInvite = async (inviteId: string) => {
     await fetch("/api/invite/decline", {
       method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ inviteId }),
     });
     setPendingInvites((list) => list.filter((i) => i.id !== inviteId));
   };
 
-  /* ---------- RENDER ---------- */
+  // ──────────────────────────────────────────────────
+  // RENDER
+  // ──────────────────────────────────────────────────
   if (loadingUser) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
@@ -196,20 +243,23 @@ export default function Home() {
   if (!userId) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
-        <AuthForm onLogin={(userId, username) => { // Pass username
-          setUserId(userId);
-          setUsername(username);
-        }} />
+        <AuthForm onLogin={(uid, uname) => { setUserId(uid); setUsername(uname); }} />
       </div>
     );
   }
 
+  const pendingCount = pendingInvites.filter(i => i.receiverId === userId).length;
+
   return (
     <div className="flex flex-col items-center gap-8 p-6 min-h-screen bg-gray-900 text-white">
+      {/* INVITE BADGE */}
+      <InviteBadge count={pendingCount} />
+
+      {/* HEADER */}
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-2">Wheel of Fantasy</h1>
         <p className="text-gray-400">Draft. Compete. Dominate.</p>
-        <p className="text-sm text-gray-300 mt-1">Logged in as @{username}</p> {/* Show username */}
+        <p className="text-sm text-gray-300 mt-1">Logged in as @{username}</p>
       </div>
 
       <button
@@ -238,7 +288,7 @@ export default function Home() {
                   <div>
                     <p className="font-medium">@{inv.sender.username}</p>
                     <p className="text-sm text-gray-300">
-                      {inv.sender.id === userId ? "You sent" : "You received"}
+                      {inv.senderId === userId ? "You sent" : "You received"}
                     </p>
                   </div>
                   <div className="flex gap-2">
