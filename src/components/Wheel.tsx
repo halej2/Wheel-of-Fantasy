@@ -36,8 +36,8 @@ export default function Wheel({ teams, onSelectTeam, selectedTeam }: WheelProps)
   const [spinning, setSpinning] = useState(false);
 
   const byeWeekTeams: NFLTeam[] = [
-    "Cleveland Browns", "New York Jets", "Philadelphia Eagles",
-    "Tampa Bay Buccaneers"
+    "Cincinnati Bengals", "Dallas Cowboys", "Tennessee Titans",
+    "Kansas City Chiefs"
   ];
 
   const chooseTeam = () => {
