@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
 export async function GET() {
-  // AWAIT cookies() — NO verifyJwt helper
   const cookieStore = await cookies();
   const token = cookieStore.get("auth_token")?.value;
   if (!token) return NextResponse.json([]);
@@ -17,16 +16,18 @@ export async function GET() {
     return NextResponse.json([]);
   }
 
+  const userId = parseInt(payload.userId, 10);
+
   const games = await prisma.game.findMany({
     where: {
       OR: [
-        { player1Id: parseInt(payload.userId) },
-        { player2Id: parseInt(payload.userId) },
+        { player1Id: userId },
+        { player2Id: userId },
       ],
     },
     include: {
       player1: { select: { id: true, username: true } },
-      player2: { select: { id: true, username: true } }, // ← MUST INCLUDE
+      player2: { select: { id: true, username: true } },
     },
     orderBy: { updatedAt: "desc" },
     take: 20,
@@ -34,15 +35,25 @@ export async function GET() {
 
   return NextResponse.json(
     games.map((g) => {
-      const isPlayer1 = g.player1Id === parseInt(payload.userId);
+      const isPlayer1 = g.player1Id === userId;
       const opponent = isPlayer1 ? g.player2 : g.player1;
 
       return {
         id: g.id,
         status: g.status,
+        currentTurn: g.currentTurn, // ← ADD THIS
+        player1: {
+          id: g.player1.id,
+          username: g.player1.username,
+        },
+        player2: {
+          id: g.player2.id,
+          username: g.player2.username,
+        },
         opponent: opponent
           ? { username: opponent.username }
           : { username: "???" },
+        isMyTurn: g.currentTurn === userId, // ← BONUS: convenience
       };
     })
   );

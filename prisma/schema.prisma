@@ -8,52 +8,53 @@ datasource db {
 }
 
 model User {
-  id         Int     @id @default(autoincrement())
-  username   String  @unique
-  password   String
-  soloRoster Roster?
-
-  sentInvites     Invite[] @relation("SentInvites")
-  receivedInvites Invite[] @relation("ReceivedInvites")
-  gamesAsPlayer1  Game[]   @relation("Player1Games")
-  gamesAsPlayer2  Game[]   @relation("Player2Games")
+  id              Int       @id @default(autoincrement())
+  username        String    @unique
+  password        String
+  soloRoster      Roster?
+  sentInvites     Invite[]  @relation("SentInvites")
+  receivedInvites Invite[]  @relation("ReceivedInvites")
+  gamesAsPlayer1  Game[]    @relation("Player1Games")
+  gamesAsPlayer2  Game[]    @relation("Player2Games")
 }
 
 model Roster {
-  id        Int  @id @default(autoincrement())
-  userId    Int  @unique
-  players   Json
-  skipsUsed Int  @default(0)
-  user      User @relation(fields: [userId], references: [id])
+  id         Int    @id @default(autoincrement())
+  userId     Int    @unique
+  players    Json
+  skipsUsed  Int    @default(0)
+  user       User   @relation(fields: [userId], references: [id])
 }
 
 model Game {
-  id          Int      @id @default(autoincrement())
-  player1Id   Int
-  player2Id   Int?
-  status      String   @default("PENDING")
-  currentTurn Int?
-  skipsUsedP1 Int      @default(0)
-  skipsUsedP2 Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  player1 User       @relation("Player1Games", fields: [player1Id], references: [id])
-  player2 User?      @relation("Player2Games", fields: [player2Id], references: [id])
-  picks   GamePick[]
-  invites Invite[] // ← ADD THIS
+  id           Int       @id @default(autoincrement())
+  player1Id    Int
+  player2Id    Int?
+  status       String    @default("PENDING")
+  currentTurn  Int?
+  skipsUsedP1  Int       @default(0)
+  skipsUsedP2  Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  player1      User      @relation("Player1Games", fields: [player1Id], references: [id])
+  player2      User?     @relation("Player2Games", fields: [player2Id], references: [id])
+  picks        GamePick[]
+  invites      Invite[]
 }
 
 model GamePick {
-  id          Int    @id @default(autoincrement())
-  gameId      Int
-  playerId    Int
-  position    String
-  player      Json
-  round       Int
-  pickInRound Int
+  id         Int      @id @default(autoincrement())
+  gameId     Int
+  playerId   Int
+  position   String   // QB, RB1, RB2, WR1, WR2, TE, FLEX, K, DEF
+  player     Json     // full player data
+  playerName String   // for unique constraint
+  createdAt  DateTime @default(now())   // ← ADDED: now orderBy works
 
-  game Game @relation(fields: [gameId], references: [id])
+  game       Game     @relation(fields: [gameId], references: [id])
+
+  @@unique([gameId, playerName])
+  @@unique([gameId, playerId, position])
 }
 
 model Invite {
@@ -63,8 +64,7 @@ model Invite {
   receiverId Int
   status     String   @default("PENDING")
   createdAt  DateTime @default(now())
-
-  game     Game @relation(fields: [gameId], references: [id])
-  sender   User @relation("SentInvites", fields: [senderId], references: [id])
-  receiver User @relation("ReceivedInvites", fields: [receiverId], references: [id])
+  game       Game     @relation(fields: [gameId], references: [id])
+  sender     User     @relation("SentInvites", fields: [senderId], references: [id])
+  receiver   User     @relation("ReceivedInvites", fields: [receiverId], references: [id])
 }
